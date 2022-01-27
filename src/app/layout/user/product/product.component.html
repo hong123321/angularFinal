@@ -1,0 +1,56 @@
+
+  <p-dataView #dv [value]="dataPopular" [paginator]="true" [rows]="6" filterBy="name"[sortField]="sortField" [sortOrder]="sortOrder" layout="grid">
+    <ng-template pTemplate="header">
+        <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between">
+            <div><p-dropdown [options]="sortOptions" (onChange)="onSortChange($event)"  placeholder="Sort By Price" styleClass="p-mb-2 p-mb-md-0"></p-dropdown></div>
+            <div>
+              <span class="p-input-icon-left p-mb-2 p-mb-md-0">
+                <i class="pi pi-search"></i>
+                <input type="search" (input)="dv.filter($event.target.value)" pInputText placeholder="Search by Name" >
+            </span>
+            </div>
+           <div>
+            <div style="margin-bottom: 5px;"><p-button (click)="showCart()" label="Add" class="mt-20"><span>{{count}}<i class="pi pi-shopping-cart" ></i></span></p-button></div>
+              <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+           </div>
+        </div>
+    </ng-template>
+    <ng-template let-product pTemplate="listItem">
+        <div class="p-col-12">
+          <div class="product">
+            <div class="product_img">
+              <img  src="assets\images\{{product.img}}" [alt]="" />
+            </div>
+            <div class="product_name">
+              {{product.name}}
+            </div>
+            <div class="product_price">
+              {{product.price}} 
+            </div>
+            <p-rating [(ngModel)]="vote" [readonly]="true" [cancel]="false"></p-rating><span>{{product.view}}</span>
+          </div>
+        </div>
+    </ng-template>
+    <ng-template let-product pTemplate="gridItem" class="p-grid">
+        <div class="p-md-4">
+          <div class="product">
+            <div class="product_img">
+              <img  src="assets\images\{{product.img}}" [alt]="" />
+            </div>
+            <div class="product_name">
+              {{product.name}}
+            </div>
+            <div class="product_price">
+              {{product.price}} 
+            </div>
+            <p-rating [(ngModel)]="vote" [readonly]="true" [cancel]="false"></p-rating><span>{{product.view}}</span>
+            <div>
+              <p-button label="Add" (click)="addToCart(product.id)" class="mt-20"><span><i class="pi pi-shopping-cart"></i></span></p-button>
+            </div>
+          </div>
+        </div>
+    </ng-template>
+   
+</p-dataView>
+
+<p-toast position="top-right" key="c"  [baseZIndex]="3000"></p-toast> 

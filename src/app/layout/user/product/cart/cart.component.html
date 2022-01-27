@@ -1,0 +1,28 @@
+<p-table  [value]="listCart" >
+  <ng-template pTemplate="header">
+      <tr>
+          <th pSortableColumn="id">STT <p-sortIcon field="vin"></p-sortIcon></th>
+          <th pSortableColumn="name">Name <p-sortIcon field="price"></p-sortIcon></th>
+          <th pSortableColumn="img">Image <p-sortIcon field="price"></p-sortIcon></th>
+          <th pSortableColumn="price">Price <p-sortIcon field="inventoryStatus"></p-sortIcon></th>
+
+          <th style="width:4em">Action</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-product let-rowIndex="rowIndex" >
+    <tr>
+      <td>{{rowIndex+1}}</td>
+      <td>{{product.name}}</td>
+      <td><img src="assets/images/{{product.img}}" alt="" style="width:100px"></td>
+      <td>{{product.price}}</td>
+      <td>
+        <div>
+          <button  pButton label="Buy" (click)="buy(product.id)" class="p-button-success"></button>
+        </div>
+         <div><button (click)="delete(rowIndex)" pButton label="Delete" class="p-button-danger" style="margin: -20px;"></button></div>
+      </td>
+  </tr>
+  </ng-template>
+</p-table>        
+<p-confirmDialog [style]="{'width': '50vw', 'font-size':'large'}" [baseZIndex]="10000" ></p-confirmDialog>   
+<p-toast position="top-right" key="c"  [baseZIndex]="3000"></p-toast>                
