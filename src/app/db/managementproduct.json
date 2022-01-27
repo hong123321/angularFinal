@@ -1,0 +1,111 @@
+{
+  "process": [
+    {
+      "name": "hongle",
+      "age": "13",
+      "phone": "123456",
+      "address": "hongle",
+      "id_product": "2",
+      "create_At": "2022-01-26T08:19:53.965Z",
+      "product": [
+        {
+          "name": "Máy lọc nước RO Kangaroo VTU KG109ABC",
+          "price": "25000000",
+          "vote": 90,
+          "img": "dt2.jpg",
+          "view": 90,
+          "id": "2"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "name": "hong2",
+      "age": "name 1123",
+      "phone": "1233221",
+      "address": "hcm",
+      "id_product": "1",
+      "create_At": "2022-01-26T08:27:36.715Z",
+      "product": [
+        {
+          "name": "Máy lọc nước RO Kangaroo VTU KG109A 9 lõi ",
+          "price": "35000000",
+          "vote": 86,
+          "img": "dt1.jpg",
+          "view": 135,
+          "id": "1"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "name": "hongle",
+      "age": "12",
+      "phone": "123321",
+      "address": "name 112",
+      "id_product": "2",
+      "create_At": "2022-01-26T09:04:43.736Z",
+      "product": [
+        {
+          "name": "Máy lọc nước RO Kangaroo VTU KG109ABC",
+          "price": "25000000",
+          "vote": 90,
+          "img": "dt2.jpg",
+          "view": 90,
+          "id": "2"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "name": "Hongle99",
+      "age": "23",
+      "phone": "123456789",
+      "address": "HCM",
+      "id_product": "2",
+      "create_At": "2022-01-27T01:51:00.138Z",
+      "product": [
+        {
+          "name": "Máy lọc nước RO Kangaroo VTU KG109ABC",
+          "price": "25000000",
+          "vote": 90,
+          "img": "dt2.jpg",
+          "view": 90,
+          "id": "2"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "name": "name 112",
+      "age": 12,
+      "phone": "1234",
+      "address": "name 112",
+      "id_product": "2",
+      "create_At": "2022-01-27T08:07:30.795Z",
+      "product": [
+        {
+          "name": "Máy lọc nước RO Kangaroo VTU KG109ABC",
+          "price": "25000000",
+          "vote": 90,
+          "img": "dt2.jpg",
+          "view": 90,
+          "id": "2"
+        }
+      ],
+      "id": 5
+    }
+  ],
+  "login": [
+    {
+      "email": "abc@gmail.com",
+      "password": "123456",
+      "id": 1
+    },
+    {
+      "email": "abc@gmail.com",
+      "password": "123456",
+      "id": 2
+    }
+  ]
+}
