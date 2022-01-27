@@ -1,0 +1,50 @@
+<button pButton type="button" label="Add new User" icon="pi pi-plus-circle" (click)="addUser()" class="p-button-outlined"></button>
+<p-table id="table" #table [columns]="cols" [value]="listUser"  [paginator]="true" [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" >
+    
+  <ng-template pTemplate="header" let-columns>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Birtday</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Action</th>
+    </tr>
+    <tr>
+      <th>
+        <p-columnFilter type="text" field="name"></p-columnFilter>
+      </th>
+      <th>
+        <p-columnFilter type="text" field="age"></p-columnFilter>
+      </th>
+      <th>
+        <p-columnFilter type="date" field="birthday"></p-columnFilter>
+      </th>
+      <th>
+        <p-columnFilter type="text" field="phone"></p-columnFilter>
+      </th>
+      <th>
+        <p-columnFilter type="text" field="address"></p-columnFilter>
+      </th>
+      <th></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-list  let-rowIndex="rowIndex">
+    <tr>
+      <td>{{list.name}}</td>
+      <td>{{list.age}}</td>
+      <td>{{list.birthday}}</td>
+      <td>{{list.phone}}</td>
+      <td>{{list.address}}</td>
+      <td>
+        <button pButton  type="button" label="Update" (click)="update(list.id)" class="p-button-success p-button-sm" style="margin-right: 5px;"></button> 
+        <button pButton type="button" icon="pi pi-times" label="Delete" (click)="delete(list.id,rowIndex)" class="p-button-danger p-button-sm"></button>
+
+      </td>
+    </tr>
+  </ng-template>
+
+</p-table>
+<p-confirmDialog [baseZIndex]="10000"></p-confirmDialog>   
+<p-toast position="top-right" key="c"  [baseZIndex]="3000"></p-toast> 
+   

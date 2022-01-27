@@ -1,0 +1,39 @@
+
+<form 
+[formGroup]="forms"
+(ngSubmit)="addUser(forms.value)"
+>
+<div class="form-group " style=" font-size:large">
+  <label for="">Name</label>
+<div class="p-inputgroup group p-col-4  "  >
+    <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+    <input class="form-control" pInputText type="text" name="name" required formControlName="name" placeholder="Username"   > 
+</div>
+<label for="">Age</label>
+<div class="p-inputgroup group p-col-4"  >
+  <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+  <input class="form-control" pInputText type="number" name="name" required formControlName="age" placeholder="Age"   > 
+</div>
+<label for="">Birthday</label>
+<div class="p-inputgroup group p-col-4"  >
+  <span class="p-inputgroup-addon"><i class="pi pi-phone"></i></span>
+  <input class="form-control" pInputText type="date" name="name" required formControlName="birthday" placeholder="Birthday" > 
+</div>
+<label for="">Phone</label>
+
+<div class="p-inputgroup group p-col-4"  >
+  <span class="p-inputgroup-addon"><i class="pi pi-id-card"></i></span>
+  <input class="form-control" pInputText type="number" name="name" required formControlName="phone" placeholder="Phone"   > 
+</div>
+<label for="">Address</label>
+
+<div class="p-inputgroup group p-col-4"  >
+  <span class="p-inputgroup-addon"><i class="pi pi-id-card"></i></span>
+  <input class="form-control" pInputText type="text" name="name" required formControlName="address" placeholder="Address"   > 
+</div>
+
+</div>
+<p-button  type="submit" [disabled]="!forms.valid">Add User</p-button>
+</form>
+
+ 
