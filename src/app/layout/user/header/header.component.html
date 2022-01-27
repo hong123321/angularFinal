@@ -1,0 +1,7 @@
+<p-menubar [model]="items">
+  
+  <button pButton label="LogOut" type="button" class="p-button-primary p-button-raised p-button-rounded" class="p-button-secondary" icon="pi pi-sign-out"  *ngIf="hide" (click)="logOut()"></button>
+
+  <button pButton label="Login" type="button"  class="p-button-primary p-button-raised p-button-rounded" icon="pi pi-sign-in" *ngIf="!hide" routerLink="login"></button>
+
+</p-menubar>
