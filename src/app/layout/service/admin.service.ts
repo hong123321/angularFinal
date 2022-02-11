@@ -15,6 +15,7 @@ export class AdminService {
   apiProduct:string ="https://61d7f81be6744d0017ba8879.mockapi.io/popular";
   apiUser:string="https://61d7f81be6744d0017ba8879.mockapi.io/user/user";
   apiProcess:string="http://localhost:3000/process"
+  apiUpload="http://localhost/angular/upload.php"
   constructor(private http:HttpClient) { }
   getUser():Observable<any>{
     return this.http.get<any>(this.apiUser)
@@ -42,5 +43,8 @@ export class AdminService {
   }
   getOrderProductById(id:number):Observable<any>{
     return this.http.get<any>(`${this.apiProduct}/${id}`)
+  }
+  addProduct(e:any):Observable<any>{
+    return this.http.post<any>(`${this.apiProduct}`,e,this.httpOptions)
   }
 }

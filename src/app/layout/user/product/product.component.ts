@@ -19,9 +19,29 @@ export class ProductComponent implements OnInit {
   count:number = 0
   dataListCart:any[]=[]
   sortOrder: number;
-
+	responsiveOptions;
     sortField: string;
-  constructor(private productPopular:ProductService, private primengConfig: PrimeNGConfig,public dialogService: DialogService) { }
+  constructor(private productPopular:ProductService, private primengConfig: PrimeNGConfig,public dialogService: DialogService) {
+    this.responsiveOptions = [
+      {
+          breakpoint: '1024px',
+          numVisible: 3,
+          numScroll: 3
+      },
+      {
+          breakpoint: '768px',
+          numVisible: 2,
+          numScroll: 2
+      },
+      {
+          breakpoint: '560px',
+          numVisible: 1,
+          numScroll: 1
+      }
+  ]
+
+
+   }
 
   ngOnInit(): void {
     this.productPopular.getPopular().subscribe(data=>{
@@ -30,13 +50,16 @@ export class ProductComponent implements OnInit {
         this.vote =  (element.vote) / 20
       });
     })
-
-    
       this.sortOptions = [
         {label: 'Price High to Low', value: '!price'},
         {label: 'Price Low to High', value: 'price'}
     ];
     this.primengConfig.ripple = true;
+    this.productPopular.getCartItem().subscribe(data=>{
+      this.dataListCart=data
+      this.count = this.dataListCart.length
+    })
+    
     }
     onSortChange(event) {
       let value = event.value;
@@ -51,11 +74,22 @@ export class ProductComponent implements OnInit {
       }
   }
     addToCart(id:number){
-
-      this.productPopular.getListCart(id).subscribe(data=>this.dataListCart.push(data))
-      this.count=this.dataListCart.length+1
-      
+      this.productPopular.getListCart(id).subscribe(data=>{
+        this.postToCart(data)
+      } 
+      )
     }
+    postToCart(value){
+      value.id = value.id + (Math.random()*1)
+      this.productPopular.postListCart(value).subscribe( 
+        data =>  {
+         console.log(data);
+         this.count ++
+        },
+        err  =>  console.log(err)
+      )
+    }
+    
     ref:DynamicDialogRef
     showCart() {
       this.ref = this.dialogService.open(CartComponent, {

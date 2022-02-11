@@ -1,5 +1,10 @@
-<button pButton type="button" label="Add new Product" icon="pi pi-plus-circle"  class="p-button-outlined"></button>
-<p-table [value]="products" [paginator]="true" [rows]="4">
+
+
+<a routerLink="../addProduct" style="text-decoration: none;">
+  <button  pButton type="button" label="Add new Product"  icon="pi pi-plus-circle"  class="p-button-outlined" style="margin: 1em;"></button>
+</a>
+
+<p-table [value]="products" [paginator]="true" [rows]="4" >
   <ng-template pTemplate="caption">
       <div class="p-d-flex p-ai-center p-jc-between">
           Products

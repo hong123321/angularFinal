@@ -30,7 +30,7 @@ export class HeaderComponent implements OnInit {
             label: 'List News',
             icon:'pi pi-fw pi-file',
             routerLink:'news'
-            }           
+            },        
     ]
   }
 

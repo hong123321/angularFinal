@@ -23,6 +23,9 @@ import { UpdateUserComponent } from '../list-user/update-user/update-user.compon
 import {RatingModule} from 'primeng/rating';
 import {ProgressBarModule} from 'primeng/progressbar';
 import {InputTextModule} from 'primeng/inputtext';
+import { AddProductComponent } from '../add-product/add-product.component';
+import {FileUploadModule} from 'primeng/fileupload';
+import {HttpClientModule} from '@angular/common/http';
 const routes: Routes = [
   {
     path: '',
@@ -44,6 +47,10 @@ const routes: Routes = [
         path: 'news',
         component: NewsComponent,
       },
+      {
+        path:'addProduct',
+        component: AddProductComponent,
+      },
     ]
   },
 ]
@@ -57,7 +64,8 @@ const routes: Routes = [
     NewsComponent,
     ManagamentProductComponent,
     AddUserComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    AddProductComponent
   ],
   imports: [
     CommonModule,
@@ -74,7 +82,9 @@ const routes: Routes = [
     ReactiveFormsModule,
     RatingModule,
     ProgressBarModule,
-    InputTextModule
+    InputTextModule,
+    FileUploadModule,
+    HttpClientModule
   ],
   providers:[MessageService,  ConfirmationService]
 })

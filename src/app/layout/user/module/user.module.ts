@@ -25,10 +25,11 @@ import { OderComponent } from '../oder/oder.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { JwtService } from 'src/app/shared/service/jwt.service';
 import { AuthGuard } from 'src/app/shared/guard/auth.guard';
+import { StepsModule } from 'primeng/steps';
+import {CarouselModule} from 'primeng/carousel';
 const routes: Routes = [
   {
     path: '',
-  
     component:HomeComponent,
     children:[
       {
@@ -78,7 +79,8 @@ const routes: Routes = [
     MessagesModule,
     ConfirmDialogModule,
     ReactiveFormsModule,
-  
+    StepsModule,
+    CarouselModule
   ],
   providers:[ConfirmationService,MessageService,JwtService,AuthGuard]
 })

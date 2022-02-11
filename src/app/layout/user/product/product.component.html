@@ -10,10 +10,28 @@
             </span>
             </div>
            <div>
-            <div style="margin-bottom: 5px;"><p-button (click)="showCart()" label="Add" class="mt-20"><span>{{count}}<i class="pi pi-shopping-cart" ></i></span></p-button></div>
+            <div style="margin-bottom: 5px;"><p-button (click)="showCart()" label="" class="mt-20"><span><span style="margin-right:0.5rem;">{{count}}</span><i class="pi pi-shopping-cart" style="font-size: 2rem"></i></span></p-button></div>
               <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
            </div>
         </div>
+        <p-carousel [value]="dataPopular" styleClass="custom-carousel" [autoplayInterval]="3000" [numVisible]="3" [numScroll]="1" [circular]="true"  [responsiveOptions]="responsiveOptions">
+          <ng-template pTemplate="header">
+        
+          </ng-template>
+          <ng-template let-product pTemplate="item">
+              <div class="product-item">
+                  <div class="product-item-content">
+                      <div class="mb-3 product_img">
+                          <img src="assets\images\{{product.img}}" [alt]="product.name" class="product-image" />
+                      </div>
+                      <div>
+                          <h4 class="mb-1">{{product.name}}</h4>
+                          <h5 class="mt-0 mb-3">${{product.price}}</h5>
+                      </div>
+                  </div>
+              </div>
+          </ng-template>
+        </p-carousel>
     </ng-template>
     <ng-template let-product pTemplate="listItem">
         <div class="p-col-12">
@@ -25,9 +43,9 @@
               {{product.name}}
             </div>
             <div class="product_price">
-              {{product.price}} 
+              {{product.price | currency:"VND"}} 
             </div>
-            <p-rating [(ngModel)]="vote" [readonly]="true" [cancel]="false"></p-rating><span>{{product.view}}</span>
+            <p-rating [(ngModel)]="vote" [readonly]="true" [cancel]="false"></p-rating><span>{{product.view}} View</span>
           </div>
         </div>
     </ng-template>
@@ -41,9 +59,9 @@
               {{product.name}}
             </div>
             <div class="product_price">
-              {{product.price}} 
+              {{product.price | currency:"VND"}} 
             </div>
-            <p-rating [(ngModel)]="vote" [readonly]="true" [cancel]="false"></p-rating><span>{{product.view}}</span>
+            <p-rating [(ngModel)]="vote" [readonly]="true" [cancel]="false"></p-rating><span>{{product.view}} view</span>
             <div>
               <p-button label="Add" (click)="addToCart(product.id)" class="mt-20"><span><i class="pi pi-shopping-cart"></i></span></p-button>
             </div>

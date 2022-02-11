@@ -11,11 +11,12 @@
   height: 42px;
 }
 .product_img{
-  
+  display: flex;
   height: 200px;
   
 }
 .product_img img{
+  margin: auto  ;
   width: 180px;
   box-shadow: 0 3px 6px #00000029, 0 3px 6px #0000003b;
   

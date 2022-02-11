@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AdminService } from '../../service/admin.service';
 @Component({
   selector: 'app-list-product',
@@ -8,7 +9,8 @@ import { AdminService } from '../../service/admin.service';
 export class ListProductComponent implements OnInit {
   products:any[];
   vote:any
-  constructor(private data:AdminService) { }
+  hiden:true
+  constructor(private data:AdminService,private router: Router) { }
 
   ngOnInit(): void {
     this.data.getProduct().subscribe(data=>{

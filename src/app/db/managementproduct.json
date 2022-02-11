@@ -107,5 +107,23 @@
       "password": "123456",
       "id": 2
     }
+  ],
+  "cart": [
+    {
+      "name": "Máy lọc nước RO Kangaroo VTU KG109ABC",
+      "price": "25000000",
+      "vote": 90,
+      "img": "dt2.jpg",
+      "view": 90,
+      "id": "20.4002493983174289"
+    },
+    {
+      "name": "Smart Tivi Samsung 4K Crystal UHD 50 inch UA50AU8100",
+      "price": "25000000",
+      "vote": 86,
+      "img": "dt3.jpg",
+      "view": 48,
+      "id": "30.16761244520601926"
+    }
   ]
 }

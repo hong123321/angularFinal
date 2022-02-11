@@ -6,10 +6,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './layout/login/login.component';
+import { RegisterComponent } from './layout/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {  MessageService } from "primeng/api";
 import { ToastModule } from 'primeng/toast';
 import { MessagesModule } from 'primeng/messages';
+import { SnowModule } from 'snow';
+import {InputTextModule} from 'primeng/inputtext';
 const routes: Routes = [
   {
     path: '',
@@ -27,13 +30,18 @@ const routes: Routes = [
   {
     path:'login',
     component:LoginComponent
+  },
+  {
+    path:'register',
+    component:RegisterComponent
   }
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
 
   ],
   imports: [
@@ -44,8 +52,9 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     ToastModule,
-    MessagesModule
-    
+    MessagesModule,
+    SnowModule,
+    InputTextModule
    
   ],
   providers: [MessageService],
