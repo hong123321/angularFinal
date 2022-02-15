@@ -30,10 +30,6 @@ export class OrderInformationComponent implements OnInit {
         )
       }
       )
-        
-        
-        
-        
       }
     )
   }
