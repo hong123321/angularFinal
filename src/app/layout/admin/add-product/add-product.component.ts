@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AdminService } from '../../service/admin.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ConfirmationService, MessageService } from 'primeng/api';
+
 @Component({
   selector: 'app-add-product',
   templateUrl: './add-product.component.html',
@@ -13,6 +14,13 @@ export class AddProductComponent implements OnInit {
   forms: FormGroup
   filename:string
   selecttedFile:File
+  httpOptions = {
+    headers: new HttpHeaders({
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods':'GET,POST,OPTIONS,DELETE,PUT',
+    'Content-Type': 'application/JSON'
+  })
+  };
   constructor(private fn: FormBuilder,private serviceAdmin:AdminService, private http:HttpClient,private confirm:ConfirmationService,private mess:MessageService) { }
 
   ngOnInit(): void {
@@ -49,8 +57,24 @@ export class AddProductComponent implements OnInit {
         }).subscribe(
           data=>console.log(data)
         )
-        this.mess.add({key: 'c',severity:'success', summary: 'Successful', detail: 'Add Product Complete', life: 3000})
-        
+        this.mess.add({key: 'c',severity:'success', summary: 'Successful', detail: 'Add Product Complete', life: 3000});
+      //  setTimeout(() => {
+      //   this.serviceAdmin.getProduct().subscribe(data=>{
+      //     console.log(data);
+      //     data.forEach(el=>
+      //       this.http.post('http://localhost:2525/imposters/4545/stubs',el,this.httpOptions).subscribe(
+      //            data=>{
+      //              console.log(data)
+      //            },
+      //            err=>console.log(err)
+                 
+      //          )
+      //       )
+               
+      //        })
+      //  }, 2000);
+          
+    
     }
   })
   }

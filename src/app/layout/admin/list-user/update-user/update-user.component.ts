@@ -19,12 +19,14 @@ export class UpdateUserComponent implements OnInit {
     const  id = this.config.data.id
     console.log(id);
     this.data.getUserById(id).subscribe(data=>{
-      this.user = data
+      console.log(data)
+      
+      this.user = data[0]
     })
     this.forms= this.fn.group({
-      name:[],
+      username:[],
       age:[],
-      birthday:[],
+      email:[],
       phone:[],
       address:[]
     })

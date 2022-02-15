@@ -81,6 +81,8 @@ export class ProductComponent implements OnInit {
     }
     postToCart(value){
       value.id = value.id + (Math.random()*1)
+      console.log(value);
+      
       this.productPopular.postListCart(value).subscribe( 
         data =>  {
          console.log(data);

@@ -46,8 +46,11 @@ export class ListUserComponent implements OnInit {
           data =>  {
             this.mess.add({key: 'c',severity:'success', summary: 'Successful', detail: 'User delete Complete', life: 5000})
             this.listUser= this.listUser.filter((input, i) => i !== rowIndex)
+            console.log(data);
+            
           },
-          err  =>  this.mess.add({key: 'c',severity:'error', summary: 'Successful', detail: 'User delete Fail', life: 5000})
+          err  =>  console.log(err)
+          
         )
       }
     })

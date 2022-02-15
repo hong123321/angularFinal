@@ -2,8 +2,10 @@
   
 <div *ngIf="hide">
   <div >
-    <button pButton icon="pi pi-user" style="float: right; margin-bottom: 5px;" >
-    
+    <button routerLink="../../user" pButton icon="pi pi-user" style="float: right; margin-bottom: 5px;padding: 0; height: 50px;" >
+      <div class="img">
+        <p-avatar image="assets/images/dt1.jpg" pBadge  severity="danger" size="xlarge"></p-avatar>
+      </div>
     </button>
   </div>
   <div>

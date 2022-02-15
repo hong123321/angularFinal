@@ -6,31 +6,37 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AdminService {
-  filter(arg0: (input: any, i: any) => boolean): AdminService {
-    throw new Error('Method not implemented.');
-  }
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/JSON' })
   };
-  apiProduct:string ="https://61d7f81be6744d0017ba8879.mockapi.io/popular";
+  apiProduct:string ="http://localhost:3000/popular";
   apiUser:string="https://61d7f81be6744d0017ba8879.mockapi.io/user/user";
+  UserAPI:string="http://localhost/angular/user.php";
+  addUserAPI:string="http://localhost/angular/register.php"
+  DeleteUserAPI:string="http://localhost/angular/deleteUser.php";
+  GetUserAPI:string="http://localhost/angular/getUserById.php";
+  UpdateUserAPI:string="http://localhost/angular/updateUser.php";
+  updatePassAPI:string="http://localhost/angular/updatepassword.php"
   apiProcess:string="http://localhost:3000/process"
   apiUpload="http://localhost/angular/upload.php"
   constructor(private http:HttpClient) { }
   getUser():Observable<any>{
-    return this.http.get<any>(this.apiUser)
+    return this.http.get<any>(this.UserAPI)
   }
   deleteUser(id:number):Observable<any>{
-    return this.http.delete(`${this.apiUser}/${id}`)
+    return this.http.delete(`${this.DeleteUserAPI}?id=${id}`)
   }
   getUserById(id:number):Observable<any>{
-    return this.http.get<any>(`${this.apiUser}/${id}`)
+    return this.http.get<any>(`${this.GetUserAPI}?id=${id}`)
   }
   updateUser(e:any,id:number):Observable<any>{
-    return this.http.put(`${this.apiUser}/${id}`,e,this.httpOptions)
+    return this.http.put(`${this.UpdateUserAPI}?id=${id}`,e,this.httpOptions)
+  }
+  updatePass(e:any,id:number):Observable<any>{
+    return this.http.put(`${this.updatePassAPI}?id=${id}`,e,this.httpOptions)
   }
   addUser(e:any):Observable<any>{
-    return this.http.post<any>(`${this.apiUser}`,e,this.httpOptions)
+    return this.http.post<any>(`${this.addUserAPI}`,e,this.httpOptions)
   }
   getProduct():Observable<any>{
     return this.http.get<any>(this.apiProduct)

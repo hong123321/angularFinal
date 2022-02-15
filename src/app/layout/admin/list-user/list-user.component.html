@@ -5,7 +5,7 @@
     <tr>
       <th>Name</th>
       <th>Age</th>
-      <th>Birtday</th>
+      <th>Email</th>
       <th>Phone</th>
       <th>Address</th>
       <th>Action</th>
@@ -18,7 +18,7 @@
         <p-columnFilter type="text" field="age"></p-columnFilter>
       </th>
       <th>
-        <p-columnFilter type="date" field="birthday"></p-columnFilter>
+        <p-columnFilter type="text" field="Email"></p-columnFilter>
       </th>
       <th>
         <p-columnFilter type="text" field="phone"></p-columnFilter>
@@ -31,9 +31,9 @@
   </ng-template>
   <ng-template pTemplate="body" let-list  let-rowIndex="rowIndex">
     <tr>
-      <td>{{list.name}}</td>
+      <td>{{list.username}}</td>
       <td>{{list.age}}</td>
-      <td>{{list.birthday}}</td>
+      <td>{{list.email}}</td>
       <td>{{list.phone}}</td>
       <td>{{list.address}}</td>
       <td>

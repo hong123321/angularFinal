@@ -1,0 +1,19 @@
+<div class="p-grid">
+  <div class="p-col-3">
+  <h1 style="text-align: center;">Personal Page</h1>
+<div class="user_img">
+  <img src="assets/images/dt1.jpg" height="100px" alt="">
+</div>
+<div class="user_name" *ngFor="let item of datauser">
+  <h3>{{item.username}}</h3>
+</div>
+<div class="user_manu">
+<p-panelMenu [model]="items" [style]="{'width':'300px'}" (click)="menu($event)"></p-panelMenu>
+</div>
+<p-confirmDialog [baseZIndex]="10000"></p-confirmDialog>  
+
+  </div>
+  <div class="p-col-9">
+    <router-outlet></router-outlet>
+  </div>
+</div>

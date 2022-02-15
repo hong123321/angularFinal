@@ -17,6 +17,7 @@ export class OderComponent implements OnInit {
 
   ngOnInit(): void {
     this.idUser = this.routes.snapshot.paramMap.get('id');
+    const id = Number(localStorage.getItem('token'))
     this.data.getOrderProductById(this.idUser).subscribe(data=>this.product.push(data)
     )
     this.forms= this.form.group({
@@ -26,7 +27,8 @@ export class OderComponent implements OnInit {
       address:['',[Validators.required]],
       id_product:[this.idUser],
       create_At:[new Date()],
-      product:[this.product]
+      product:[this.product],
+      id_user:[id]
     })
   }
   buy(e:any){

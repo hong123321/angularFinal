@@ -8,7 +8,8 @@ export class ProductService {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/JSON' })
   };
-  apiPopular:string ="https://61d7f81be6744d0017ba8879.mockapi.io/popular"
+  apiPopular:string ="http://localhost:4545/stubs"
+  apiProduct:string="http://localhost:3000/popular"
   cartAPI:string="http://localhost:3000/cart"
   constructor(private http:HttpClient) { }
 
@@ -16,7 +17,7 @@ export class ProductService {
     return this.http.get<any>(this.apiPopular)
   }
   getListCart(id:number):Observable<any>{
-    return this.http.get<any>(`${this.apiPopular}/${id}`)
+    return this.http.get<any>(`${this.apiProduct}/${id}`)
   }
   postListCart(value:any):Observable<any>{
     return this.http.post<any>(this.cartAPI,value,this.httpOptions)

@@ -27,6 +27,14 @@ import { JwtService } from 'src/app/shared/service/jwt.service';
 import { AuthGuard } from 'src/app/shared/guard/auth.guard';
 import { StepsModule } from 'primeng/steps';
 import {CarouselModule} from 'primeng/carousel';
+import {AvatarModule} from 'primeng/avatar';
+import {AvatarGroupModule} from 'primeng/avatargroup';
+import { UserPageComponent } from '../user-page/user-page.component';
+import { PanelMenuModule } from 'primeng/panelmenu';
+import { PersonalInformationComponent } from '../user-page/personal-information/personal-information.component';
+import { OrderInformationComponent } from '../user-page/order-information/order-information.component';
+import { ChangePasswordComponent } from '../user-page/personal-information/change-password/change-password.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -46,6 +54,21 @@ const routes: Routes = [
         canActivate:[AuthGuard],
         component:OderComponent,
         
+      },
+      {
+        path:'user',
+        canActivate:[AuthGuard],
+        component:UserPageComponent,
+        children:[
+          {
+            path:'information',
+            component:PersonalInformationComponent
+          },
+          {
+            path:'orderinformation',
+            component:OrderInformationComponent
+          }
+        ]
       }
     ]
   },
@@ -60,7 +83,11 @@ const routes: Routes = [
     HeaderComponent,
     NewsComponent,
     ProductComponent,
-    OderComponent
+    OderComponent,
+    UserPageComponent,
+    PersonalInformationComponent,
+    OrderInformationComponent,
+    ChangePasswordComponent
   ],
   imports: [
     CommonModule,
@@ -80,7 +107,10 @@ const routes: Routes = [
     ConfirmDialogModule,
     ReactiveFormsModule,
     StepsModule,
-    CarouselModule
+    CarouselModule,
+    AvatarModule,
+    AvatarGroupModule,
+    PanelMenuModule
   ],
   providers:[ConfirmationService,MessageService,JwtService,AuthGuard]
 })

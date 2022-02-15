@@ -44,7 +44,7 @@ export class CartComponent implements OnInit {
     })
    }
  buy(id:number){
-   var ids = Math.floor(id) / 10
+   var ids = Math.floor(id)
   if(!this.hide){
     this.confSV.confirm({
       message: 'You need login to buy product, Do you want Login ?',

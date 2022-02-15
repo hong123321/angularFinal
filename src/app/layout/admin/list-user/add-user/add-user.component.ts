@@ -16,9 +16,10 @@ export class AddUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.forms= this.fn.group({
-      name:['',[Validators.required]],
+      username:['',[Validators.required,Validators.minLength(6)]],
+      password:['',[Validators.required,Validators.minLength(6)]],
       age:['',[Validators.required]],
-      birthday:['',[Validators.required]],
+      email:['',[Validators.required]],
       phone:['',[Validators.required]],
       address:['',[Validators.required]]
     })
@@ -43,6 +44,12 @@ export class AddUserComponent implements OnInit {
       }
     })
   }
+  get name() { return this.forms.get('username'); }
+  get password() { return this.forms.get('password'); }
+  get email() { return this.forms.get('email'); }
+  get phone() { return this.forms.get('phone'); }
+  get age() { return this.forms.get('age'); }
+  get address() { return this.forms.get('address'); }
 }
    
   

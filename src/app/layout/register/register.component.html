@@ -51,6 +51,24 @@
       </div>
     </div>
     <div class="group">
+      <label for="user" class="label">AGE</label>
+      <input id="user" type="text" pInputText class="input p-col-12" required formControlName="age">
+      <div *ngIf="age.invalid && (age.dirty || age.touched)">
+        <div *ngIf="age.errors?.required" class="validate">
+          Age is required.
+        </div>
+      </div>
+    </div>
+    <div class="group">
+      <label for="user" class="label">ADDRESS</label>
+      <input id="user" type="text" pInputText class="input p-col-12" required formControlName="address">
+      <div *ngIf="address.invalid && (address.dirty || address.touched)">
+        <div *ngIf="address.errors?.required" class="validate">
+          Address is required.
+        </div>
+      </div>
+    </div>
+    <div class="group">
       <button class="button" type="submit" [disabled]="!formsRegister.valid">SIGN UP</button>
     </div>
 </form>

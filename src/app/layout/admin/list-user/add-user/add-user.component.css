@@ -1,3 +1,10 @@
 .group{
   width: auto;
 }
+.validate{
+  color:red
+}
+.validate p {
+  font-size: small;
+  margin: 2px;
+}

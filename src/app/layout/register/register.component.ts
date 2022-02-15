@@ -17,7 +17,10 @@ export class RegisterComponent implements OnInit {
       username:['',[Validators.required,Validators.minLength(6)]],
       password:['',[Validators.required,Validators.minLength(6)]],
       email:['',[Validators.required]],
-      phone:['',[Validators.required]]
+      phone:['',[Validators.required]],
+      age:['',[Validators.required]],
+      address:['',[Validators.required]]
+
     })
   }
   register(e:any){
@@ -36,6 +39,8 @@ export class RegisterComponent implements OnInit {
   get password() { return this.formsRegister.get('password'); }
   get email() { return this.formsRegister.get('email'); }
   get phone() { return this.formsRegister.get('phone'); }
+  get age() { return this.formsRegister.get('age'); }
+  get address() { return this.formsRegister.get('address'); }
 
 
 }
