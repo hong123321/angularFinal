@@ -41,8 +41,7 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
-
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
