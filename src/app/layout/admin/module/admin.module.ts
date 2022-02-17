@@ -26,6 +26,7 @@ import {InputTextModule} from 'primeng/inputtext';
 import { AddProductComponent } from '../add-product/add-product.component';
 import {FileUploadModule} from 'primeng/fileupload';
 import {HttpClientModule} from '@angular/common/http';
+import {InputTextareaModule} from 'primeng/inputtextarea';
 const routes: Routes = [
   {
     path: '',
@@ -84,7 +85,8 @@ const routes: Routes = [
     ProgressBarModule,
     InputTextModule,
     FileUploadModule,
-    HttpClientModule
+    HttpClientModule,
+    InputTextareaModule
   ],
   providers:[MessageService,  ConfirmationService]
 })
