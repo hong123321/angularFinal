@@ -34,7 +34,9 @@ import { PanelMenuModule } from 'primeng/panelmenu';
 import { PersonalInformationComponent } from '../user-page/personal-information/personal-information.component';
 import { OrderInformationComponent } from '../user-page/order-information/order-information.component';
 import { ChangePasswordComponent } from '../user-page/personal-information/change-password/change-password.component';
+import { DetailNewsComponent } from '../news/detail-news/detail-news.component';
 
+import {PaginatorModule} from 'primeng/paginator';
 const routes: Routes = [
   {
     path: '',
@@ -47,13 +49,16 @@ const routes: Routes = [
       },
       {
         path: 'news',
-        component: NewsComponent
+        component: NewsComponent,
+      },
+      {
+        path:'detail',
+        component:DetailNewsComponent
       },
       {
         path:'order',
         canActivate:[AuthGuard],
         component:OderComponent,
-        
       },
       {
         path:'user',
@@ -87,7 +92,8 @@ const routes: Routes = [
     UserPageComponent,
     PersonalInformationComponent,
     OrderInformationComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    DetailNewsComponent
   ],
   imports: [
     CommonModule,
@@ -110,7 +116,8 @@ const routes: Routes = [
     CarouselModule,
     AvatarModule,
     AvatarGroupModule,
-    PanelMenuModule
+    PanelMenuModule,
+    PaginatorModule
   ],
   providers:[ConfirmationService,MessageService,JwtService,AuthGuard]
 })

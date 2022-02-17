@@ -18,7 +18,8 @@ export class AdminService {
   UpdateUserAPI:string="http://localhost/angular/updateUser.php";
   updatePassAPI:string="http://localhost/angular/updatepassword.php"
   apiProcess:string="http://localhost:3000/process"
-  apiUpload="http://localhost/angular/upload.php"
+  apiUpload="http://localhost/angular/upload.php";
+  newsAPI:string="http://localhost:3004/news";
   constructor(private http:HttpClient) { }
   getUser():Observable<any>{
     return this.http.get<any>(this.UserAPI)
@@ -52,5 +53,8 @@ export class AdminService {
   }
   addProduct(e:any):Observable<any>{
     return this.http.post<any>(`${this.apiProduct}`,e,this.httpOptions)
+  }
+  postNews(e:any):Observable<any>{
+    return this.http.post<any>(`${this.newsAPI}`,e,this.httpOptions)
   }
 }

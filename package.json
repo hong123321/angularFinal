@@ -7,8 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "lib:build": "ng build snow"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -27,7 +26,7 @@
     "primeicons": "^4.1.0",
     "primeng": "^11.0.0",
     "rxjs": "~6.6.0",
-    "snow": "file:dist/snow/snow-0.0.1.tgz",
+    "snow": "file:src/snow-0.0.1.tgz",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
   },

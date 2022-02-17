@@ -44,6 +44,7 @@ export class ProductComponent implements OnInit {
    }
 
   ngOnInit(): void {
+
     this.productPopular.getPopular().subscribe(data=>{
       this.dataPopular=data;
       data.map(element => {
@@ -105,5 +106,8 @@ export class ProductComponent implements OnInit {
           baseZIndex: 10000
       });
 
+  }
+  delete($event){
+    console.log($event)
   }
 }

@@ -12,10 +12,7 @@
     "importHelpers": true,
     "target": "es2015",
     "paths": {
-      "snow": [
-        "dist/snow/snow",
-        "dist/snow"
-      ],
+    
     },
     "module": "es2020",
     "lib": [

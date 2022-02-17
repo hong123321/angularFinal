@@ -21,3 +21,17 @@
   box-shadow: 0 3px 6px #00000029, 0 3px 6px #0000003b;
   
 }
+.title{
+
+  background: -webkit-linear-gradient(left, rgb(129, 105, 59) , yellow, green, cyan, blue, violet);
+  background: -o-linear-gradient(right, rgb(64, 146, 26), yellow, green, cyan, blue, violet);
+  background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+  background: linear-gradient(to right, rgb(109, 94, 67) , rgb(133, 133, 70), green, cyan, blue, violet);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 1px outset;
+  width: fit-content
+}
+.p-grid{
+  display: inline-flex;
+}

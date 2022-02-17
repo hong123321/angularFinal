@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
         routerLink:'home'
       },
       {
-        label: 'news',
+        label: 'News',
         icon: 'pi pi-fw pi-calendar',
         routerLink:'news'
       },

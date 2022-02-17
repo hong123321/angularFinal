@@ -1,0 +1,48 @@
+.news_nav{
+ 
+  background-color:#0078BB ;
+  height: 40px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 15px;
+}
+.news_nav_content{
+  padding: 10px;
+}
+.content{
+  width: 650px;
+    display: inline-block;
+    overflow: hidden;
+    text-align: left;
+    background: #f7f7f7;
+    padding: 2%;
+    padding-top: 1%;
+    height: 70px;
+    line-height: 22px;
+    border-bottom: 21px solid #f7f7f7;
+}
+.time{
+  display: block;
+  color: #000;
+  padding: 0 2%;
+  padding-bottom: 0;
+}
+.line{
+  border-top: 1px solid #ddd;
+  margin-bottom: 5px;
+}
+.title{
+  display: block;
+    margin: 5px 0;
+    color: #000;
+    padding: 0 2%;
+    padding-bottom: 0;
+    font-weight: bold;
+    max-height: 38px;
+    overflow: hidden;
+    
+}
+
+:host ::ng-deep .p-grid {
+  justify-content:  space-evenly;
+} 
