@@ -1,21 +1,22 @@
 <div style="background-color: #0078BB;">
-  <img src="https://cdn.tgdd.vn/2022/02/banner/1200-44-1200x44-2.png" style="display: block;margin-left: auto;margin-right: auto;" alt="">
+  <img src="https://cdn.tgdd.vn/2022/02/banner/1200-44-1200x44-2.png"
+    style="display: block;margin-left: auto;margin-right: auto;" alt="">
 </div>
 <p-menubar [model]="items">
-
-<div *ngIf="hide">
-  <div >
-    <button routerLink="../../user" pButton icon="pi pi-user" style="float: right; margin-bottom: 5px;padding: 0; height: 50px;" >
-      <div class="img">
-        <p-avatar image="assets/images/dt1.jpg" pBadge  severity="danger" size="xlarge"></p-avatar>
-      </div>
-    </button>
+  <div *ngIf="hide">
+    <div>
+      <button routerLink="../../user" pButton icon="pi pi-user"
+        style="float: right; margin-bottom: 5px;padding: 0; height: 50px;">
+        <div class="img" *ngFor="let item of Image">
+          <p-avatar image="assets/user/{{item.image}}" pBadge severity="danger" size="xlarge"></p-avatar>
+        </div>
+      </button>
+    </div>
+    <div>
+      <button style="padding: 5px;" pButton label="Logout" class="p-button-sm" type="button" class="p-button-secondary"
+        (click)="logOut()"></button>
+    </div>
   </div>
-  <div>
-    <button style="padding: 5px;" pButton label="Logout" class="p-button-sm" type="button"  class="p-button-secondary" (click)="logOut()"></button>
-  </div>
-</div>
-
-  <button pButton label="Login" type="button"  class="p-button-primary p-button-raised p-button-rounded" icon="pi pi-sign-in" *ngIf="!hide" routerLink="login"></button>
-
+  <button pButton label="Login" type="button" class="p-button-primary p-button-raised p-button-rounded"
+    icon="pi pi-sign-in" *ngIf="!hide" routerLink="login"></button>
 </p-menubar>

@@ -1,6 +1,4 @@
-
-<p-table id="table" [value]="dataUser"  >
-    
+<p-table id="table" [value]="dataUser">
   <ng-template pTemplate="header" let-columns>
     <tr>
       <th>UserName</th>
@@ -11,7 +9,7 @@
       <th>Address</th>
     </tr>
   </ng-template>
-  <ng-template pTemplate="body" let-list  let-rowIndex="rowIndex">
+  <ng-template pTemplate="body" let-list let-rowIndex="rowIndex">
     <tr>
       <td>{{list.username}}</td>
       <td>{{list.password}}</td>
@@ -23,7 +21,5 @@
   </ng-template>
 </p-table>
 <button pButton (click)="changePass()" style="margin: 20px 0;">Change Password</button>
-<p-confirmDialog [baseZIndex]="10000"></p-confirmDialog>   
-<p-toast position="top-right" key="c"  [baseZIndex]="3000"></p-toast> 
-
-   
+<p-confirmDialog [baseZIndex]="10000"></p-confirmDialog>
+<p-toast position="top-right" key="c" [baseZIndex]="3000"></p-toast>

@@ -1,36 +1,34 @@
-
-
 <a routerLink="../addProduct" style="text-decoration: none;">
-  <button  pButton type="button" label="Add new Product"  icon="pi pi-plus-circle"  class="p-button-outlined" style="margin: 1em;"></button>
+  <button pButton type="button" label="Add new product" icon="pi pi-plus-circle" class="p-button-outlined"
+    style="margin: 1em;"></button>
 </a>
-
-<p-table [value]="products" [paginator]="true" [rows]="4" >
+<p-table [value]="products" [paginator]="true" [rows]="4">
   <ng-template pTemplate="caption">
-      <div class="p-d-flex p-ai-center p-jc-between">
-          Products
-          <p-button icon="pi pi-refresh"></p-button>
-      </div>
+    <div class="p-d-flex p-ai-center p-jc-between">
+      Products
+      <p-button icon="pi pi-refresh"></p-button>
+    </div>
   </ng-template>
   <ng-template pTemplate="header">
-      <tr>
-          <th>Name</th>
-          <th>Image</th>
-          <th>Price</th>
-          <th>Vote</th>
-          <th>View</th>
-      </tr>
+    <tr>
+      <th>Name</th>
+      <th>Image</th>
+      <th>Price</th>
+      <th>Vote</th>
+      <th>View</th>
+    </tr>
   </ng-template>
   <ng-template pTemplate="body" let-product>
-      <tr>
-          <td>{{product.name}}</td>
-          <td>
-            <img src="assets/images/{{product.img}}" alt="" style="width:100px">
-          </td>
-          <td>{{product.price }}</td>
-          <td>{{product.vote}}
-          <p-rating [ngModel]="vote" [readonly]="true" [cancel]="false"></p-rating>
-        </td>
-          <td>{{product.view}}</td>
-      </tr>
+    <tr>
+      <td>{{product.name}}</td>
+      <td>
+        <img src="assets/images/{{product.img}}" alt="" style="width:100px">
+      </td>
+      <td>{{product.price }}</td>
+      <td>{{product.vote}}
+        <p-rating [ngModel]="vote" [readonly]="true" [cancel]="false"></p-rating>
+      </td>
+      <td>{{product.view}}</td>
+    </tr>
   </ng-template>
 </p-table>

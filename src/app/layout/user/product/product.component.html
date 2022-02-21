@@ -10,7 +10,9 @@
             </span>
             </div>
            <div>
-            <div style="margin-bottom: 5px;"><p-button (click)="showCart()" label="" class="mt-20"><span><span style="margin-right:0.5rem;">{{count}}</span><i class="pi pi-shopping-cart" style="font-size: 2rem"></i></span></p-button></div>
+            <div style="margin-bottom: 5px;"><p-button (click)="showCart()" label="" class="mt-20" styleClass="p-cart"><div class="cart_icon"><i class="pi pi-shopping-cart" style=""></i>
+              <div class="cart_number">{{count}}</div>
+            </div></p-button></div>
               <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
            </div>
         </div>

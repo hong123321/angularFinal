@@ -1,69 +1,68 @@
 <div class="news_nav">
   <div class="news_nav_content">
     <div style="display: flex;">
-      <div routerLink="/home" style="cursor: pointer;">Home</div> <div style="margin-top: 1px;"><i class="pi pi-angle-right"></i></div> <div routerLink="/news" style="cursor: pointer;">News</div><div style="margin-top: 1px;"><i class="pi pi-angle-right"></i></div> <div>Promotion Information</div>
+      <div routerLink="/home" style="cursor: pointer;">Home</div>
+      <div style="margin-top: 1px;"><i class="pi pi-angle-right"></i></div>
+      <div routerLink="/news" style="cursor: pointer;">News</div>
+      <div style="margin-top: 1px;"><i class="pi pi-angle-right"></i></div>
+      <div>Promotion Information</div>
     </div>
   </div>
-  </div>
-  <div class="p-grid" style="margin-top: 3%" >
-    <div class="p-col-7" style="background: #f7f7f7;">
-      <div style=" margin-left: 20%;">
-        <div class="title">
-         {{dataNews?.title}}
-        </div>
-        <span class="orther_time">
-          8 hour ago
-        </span>
-        <div class="line"></div>
-        <div class="des">
-          <h2>
-           {{dataNews?.decription}}
-          </h2>
-        </div>
-        <div>
-          <img src="assets\news\{{dataNews.image}}" style=" width: 90%;display: block;margin-left: auto;margin-right: auto;">
-        </div>
+</div>
+<div class="p-grid" style="margin-top: 3%">
+  <div class="p-col-7" style="background: #f7f7f7;">
+    <div style=" margin-left: 20%;">
+      <div class="title">
+        {{dataNews?.title}}
       </div>
+      <span class="orther_time">
+        {{dataNews?.create_At | date:'short' }}
+      </span>
+      <div class="line"></div>
+      <div class="des">
+        <h2>
+          {{dataNews?.decription}}
+        </h2>
+      </div>
+      <div>
+        <img src="assets\news\{{dataNews?.image}}"
+          style=" width: 90%;display: block;margin-left: auto;margin-right: auto;">
+      </div>
+      <div class="content">
+        nội dung chương trình
+      </div>
+      <div>
+        <p>
+          {{dataNews?.content}}
+        </p>
+      </div>
+    </div>
   </div>
-   <div class="p-col-5 orther" >
+  <div class="p-col-5 orther">
     <div>
       <div class="orther_title">
         <h2>Other promotions</h2>
         <div class="line"></div>
       </div>
-       <!-- <div *ngFor="let list of listDataNews">
-        <div class="orther_item">
-          <div>
-            <img src="assets\images\{{list.image}}" style="max-width: 200px; " alt="">
-            <span class="orther_time">
-              <p>8 hour ago</p>
-            </span>
-          </div>
-          <div>
-           <h3>{{list.title}}</h3>
-          </div>
-       </div>
-       <div class="line"></div>
-    </div> -->
-    <p-dataView [value]="listDataNews" [paginator]="true" [rows]="4" layout="grid"  >
-      <ng-template let-product pTemplate="gridItem" class="lost">
-        <div (click)="move(product.id)">
-          <div class="orther_item">
-            <div>
-              <img src="assets\news\{{product.image}}" style="max-width: 200px; " alt="">
-              <span class="orther_time">
-                <p>8 hour ago</p>
-              </span>
+      <p-dataView [value]="listDataNews" [paginator]="true" [rows]="4" layout="grid">
+        <ng-template let-product pTemplate="gridItem" class="lost">
+          <div (click)="move(product.id)">
+            <div class="orther_item">
+              <div>
+                <img src="assets\news\{{product?.image}}" style="max-width: 200px; " alt="">
+                <span class="orther_time">
+                  <p> {{dataNews?.create_At | date:'short' }}</p>
+                </span>
+              </div>
+              <div>
+                <h3>{{product.title}}</h3>
+              </div>
             </div>
-            <div>
-             <h3>{{product.title}}</h3>
-            </div>
-         </div>
-         <div class="line"></div>
-      </div>
-    </ng-template>
-    </p-dataView>
-    
+            <div class="line"></div>
+          </div>
+        </ng-template>
+      </p-dataView>
+
+    </div>
   </div>
-  </div>
-  </div>
+</div>

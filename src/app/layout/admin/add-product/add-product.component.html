@@ -1,40 +1,36 @@
-<form 
-[formGroup]="forms"
-(ngSubmit)="onSubmit(forms.value)"
->
-<div class="form-group ">
-  <label for="">Image</label>
-  <div class="p-inputgroup group p-col-12  "  >
+<form [formGroup]="forms" (ngSubmit)="onSubmit(forms.value)">
+  <div class="form-group ">
+    <label for="">Image</label>
+    <div class="p-inputgroup group p-col-12  ">
       <span class="p-inputgroup-addon"><i class="pi pi-images"></i></span>
-      <input type="file" pInputText (change)="uploadimg($event)" formControlName="img" >
+      <input type="file" class="img" pInputText (change)="uploadimg($event)" formControlName="img">
+    </div>
+    <label for="">Price</label>
+    <div class="p-inputgroup group p-col-12">
+      <span class="p-inputgroup-addon"><i class="pi pi-dollar"></i></span>
+      <input class="form-control" pInputText type="text" name="name" required formControlName="name" placeholder="name">
+    </div>
+    <label for="">Price</label>
+    <div class="p-inputgroup group p-col-12">
+      <span class="p-inputgroup-addon"><i class="pi pi-dollar"></i></span>
+      <input class="form-control" id="img" accept="image/*" pInputText type="number" formControlName="price"
+        placeholder="Price" />
+    </div>
+    <label for="">Vote</label>
+    <div class="p-inputgroup group p-col-12">
+      <span class="p-inputgroup-addon"><i class="pi pi-star"></i></span>
+      <input class="form-control" pInputText type="number" name="name" required formControlName="vote"
+        placeholder="Vote">
+    </div>
+    <label for="">View</label>
+
+    <div class="p-inputgroup group p-col-12">
+      <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
+      <input class="form-control" pInputText type="number" name="name" required formControlName="view"
+        placeholder="View">
+    </div>
   </div>
-  <label for="">Price</label>
-<div class="p-inputgroup group p-col-12"  >
-  <span class="p-inputgroup-addon"><i class="pi pi-dollar"></i></span>
-  <input class="form-control" pInputText type="text" name="name" required formControlName="name" placeholder="name"   > 
-</div>
-<label for="">Price</label>
-<div class="p-inputgroup group p-col-12"  >
-  <span class="p-inputgroup-addon"><i class="pi pi-dollar"></i></span>
-  <input class="form-control" id="img" accept="image/*" pInputText type="number"  formControlName="price" placeholder="Price"   /> 
-</div>
-<label for="">Vote</label>
-<div class="p-inputgroup group p-col-12"  >
-  <span class="p-inputgroup-addon"><i class="pi pi-star"></i></span>
-  <input class="form-control" pInputText type="number" name="name" required formControlName="vote" placeholder="Vote" > 
-</div>
-<label for="">View</label>
-
-<div class="p-inputgroup group p-col-12"  >
-  <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
-  <input class="form-control" pInputText type="number" name="name" required formControlName="view" placeholder="View"   > 
-</div>
-</div>
-<p-button  type="submit" [disabled]="!forms.valid">Add Product</p-button>
-<p-toast position="top-right" key="c"  [baseZIndex]="3000"></p-toast> 
-<p-confirmDialog [baseZIndex]="10000"></p-confirmDialog>  
+  <p-button type="submit" [disabled]="!forms.valid">Add Product</p-button>
+  <p-toast position="top-right" key="c" [baseZIndex]="3000"></p-toast>
+  <p-confirmDialog [baseZIndex]="10000"></p-confirmDialog>
 </form>
-
-
-
- 

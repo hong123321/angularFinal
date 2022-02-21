@@ -10,9 +10,10 @@
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-data let-rowIndex="rowIndex">
-    <tr >
+    <tr>
       <td>
-        <button type="button" pButton pRipple [pRowToggler]="data" class="p-button-text p-button-rounded p-button-plain" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
+        <button type="button" pButton pRipple [pRowToggler]="data" class="p-button-text p-button-rounded p-button-plain"
+          [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
       </td>
       <td>{{data.create_At| date:'medium'}}</td>
       <td>{{data.name}}</td>
@@ -22,34 +23,37 @@
   </ng-template>
   <ng-template pTemplate="rowexpansion" let-data>
     <tr>
-        <td colspan="7">
-            <div class="p-p-3">
-                <p-table [value]="data.product" >
-                    <ng-template pTemplate="header">
-                        <tr>
-                            <th pSortableColumn="id">Order number<p-sortIcon field="price"></p-sortIcon></th>
-                            <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
-                            <th>Image</th>
-                            <th pSortableColumn="date">price <p-sortIcon field="price"></p-sortIcon></th>
-                            <th style="width: 4rem"></th>
-                        </tr>
-                    </ng-template>
-                    <ng-template pTemplate="body" let-order let-rowIndex="rowIndex">
-                      <tr>
-                        <td>{{rowIndex+1}}</td>
-                        <td>{{order.name}}</td>
-                        <td>
-                          <img src="assets/images/{{order.img}}" alt="" style="width:100px">
-                          </td>
-                          <td>
-                            {{order.price}}
-                          </td>
-                      </tr>
-                    </ng-template>
-                </p-table>
-            </div>
-        </td>
+      <td colspan="7">
+        <div class="p-p-3">
+          <p-table [value]="data.product">
+            <ng-template pTemplate="header">
+    <tr>
+      <th pSortableColumn="id">Order number<p-sortIcon field="price"></p-sortIcon>
+      </th>
+      <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon>
+      </th>
+      <th>Image</th>
+      <th pSortableColumn="date">price <p-sortIcon field="price"></p-sortIcon>
+      </th>
+      <th style="width: 4rem"></th>
     </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-order let-rowIndex="rowIndex">
+    <tr>
+      <td>{{rowIndex+1}}</td>
+      <td>{{order.name}}</td>
+      <td>
+        <img src="assets/images/{{order.img}}" alt="" style="width:100px">
+      </td>
+      <td>
+        {{order.price}}
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+</div>
+</td>
+</tr>
 </ng-template>
 </p-table>
 <!-- <li>{{data.create_At | date:'medium'  }}</li> -->

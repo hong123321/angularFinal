@@ -1,23 +1,21 @@
-
-<form 
-[formGroup]="forms"
-(ngSubmit)="onSubmit(forms.value)"
->
-<div class="formGroup">
-  <h3>Title</h3>
-  <textarea rows="5" cols="60" pInputTextarea autoResize="autoResize" formControlName="title"></textarea>
-</div>
-<div class="formGroup">
-  <h3>Decription</h3>
-  <textarea rows="5" cols="60" pInputTextarea autoResize="autoResize" formControlName="decription"></textarea>
-</div>
-<h3 for="">Image</h3>
-  <div class="p-inputgroup group p-col-12  "  >
-      <span class="p-inputgroup-addon"><i class="pi pi-images"></i></span>
-      <input type="file" pInputText (change)="uploadimg($event)"  formControlName="image" >
+<form [formGroup]="forms" (ngSubmit)="onSubmit(forms.value)">
+  <div class="formGroup">
+    <h3>Title</h3>
+    <textarea rows="5" cols="60" pInputTextarea autoResize="autoResize" formControlName="title"></textarea>
   </div>
-<p-button  type="submit" >Add News</p-button>
+  <div class="formGroup">
+    <h3>Decription</h3>
+    <textarea rows="5" cols="60" pInputTextarea autoResize="autoResize" formControlName="decription"></textarea>
+  </div>
+  <div class="formGroup">
+    <h3>Content</h3>
+    <textarea rows="5" cols="60" pInputTextarea autoResize="autoResize" formControlName="content"></textarea>
+  </div>
+  <h3 for="">Image</h3>
+  <div class="p-inputgroup group p-col-12  ">
+    <span class="p-inputgroup-addon"><i class="pi pi-images"></i></span>
+    <input type="file" pInputText (change)="uploadimg($event)" formControlName="image">
+  </div>
+  <p-button type="submit">Add news</p-button>
 </form>
-<p-toast position="top-right" key="c"  [baseZIndex]="3000"></p-toast> 
-
- 
+<p-toast position="top-right" key="c" [baseZIndex]="3000"></p-toast>

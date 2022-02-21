@@ -1,6 +1,8 @@
-<button pButton type="button"  style="margin: 1em;" label="Add new User" icon="pi pi-plus-circle" (click)="addUser()" class="p-button-outlined"></button>
-<p-table id="table" #table [columns]="cols" [value]="listUser"  [paginator]="true" [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" >
-    
+<button pButton type="button" style="margin: 1em;" label="Add new user" icon="pi pi-plus-circle" (click)="addUser()"
+  class="p-button-outlined"></button>
+<p-table id="table" #table [columns]="cols" [value]="listUser" [paginator]="true" [rows]="10"
+  [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]">
+
   <ng-template pTemplate="header" let-columns>
     <tr>
       <th>Name</th>
@@ -29,7 +31,7 @@
       <th></th>
     </tr>
   </ng-template>
-  <ng-template pTemplate="body" let-list  let-rowIndex="rowIndex">
+  <ng-template pTemplate="body" let-list let-rowIndex="rowIndex">
     <tr>
       <td>{{list.username}}</td>
       <td>{{list.age}}</td>
@@ -37,14 +39,15 @@
       <td>{{list.phone}}</td>
       <td>{{list.address}}</td>
       <td>
-        <button pButton  type="button" label="Update" (click)="update(list.id)" class="p-button-success p-button-sm" style="margin-right: 5px;"></button> 
-        <button pButton type="button" icon="pi pi-times" label="Delete" (click)="delete(list.id,rowIndex)" class="p-button-danger p-button-sm"></button>
+        <button pButton type="button" label="Update" (click)="update(list.id)" class="p-button-success p-button-sm"
+          style="margin-right: 5px;"></button>
+        <button pButton type="button" icon="pi pi-times" label="Delete" (click)="delete(list.id,rowIndex)"
+          class="p-button-danger p-button-sm"></button>
 
       </td>
     </tr>
   </ng-template>
 
 </p-table>
-<p-confirmDialog [baseZIndex]="10000"></p-confirmDialog>   
-<p-toast position="top-right" key="c"  [baseZIndex]="3000"></p-toast> 
-   
+<p-confirmDialog [baseZIndex]="10000"></p-confirmDialog>
+<p-toast position="top-right" key="c" [baseZIndex]="3000"></p-toast>

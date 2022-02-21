@@ -1,43 +1,25 @@
 <div class="news_nav">
-<div class="news_nav_content">
-  <div style="display: flex;">
-    <div routerLink="/home" style="cursor: pointer;">Home</div> <div style="margin-top: 1px;"><i class="pi pi-angle-right"></i></div> <div>News</div>
-  </div>
-</div>
-</div>
-<!-- <div class="p-grid p-jc-evenly" style="margin-top: 3%" >
-  <div class="p-order-sm-6 p-order-6 p-order-lg-3 p-order-md-3" style="background: #f7f7f7;" *ngFor="let item of dataNews"
-   [routerLink]="['../detail',{id:item.id}]">
-    <div>
-      <img src="assets/images/{{item.image}}"  alt="">
-    </div>
-    <div class="title">
-     {{item.title}}
-    </div>
-    <div class="time">
-      8 giờ trước
-    </div>
-    <div class="line">
-    </div>
-    <div class="content">
-      {{item.content}}
+  <div class="news_nav_content">
+    <div style="display: flex;">
+      <div routerLink="/home" style="cursor: pointer;">Home</div>
+      <div style="margin-top: 1px;"><i class="pi pi-angle-right"></i></div>
+      <div>News</div>
     </div>
   </div>
-</div> -->
-
-<p-dataView [value]="dataNews" [paginator]="true" [rows]="2" layout="grid"  >
-  <ng-template let-product pTemplate="gridItem" class="lost">
+</div>
+<p-dataView [value]="dataNews" [paginator]="true" [rows]="2" layout="grid">
+  <ng-template let-product pTemplate="gridItem">
     <div style="margin-top: 3%">
-      <div class="p-order-sm-6 p-order-6 p-order-lg-3 p-order-md-3 p-col-6" style="background: #f7f7f7;"
-       [routerLink]="['../detail',{id:product.id}]">
+      <div class="p-order-sm-6 p-order-6 p-order-lg-3 p-order-md-3 p-col-6 news_item" style="background: #f7f7f7;"
+        [routerLink]="['../detail',{id:product.id}]">
         <div>
           <img src="assets/news/{{product.image}}" style="width:700px" alt="">
         </div>
         <div class="title">
-         {{product.title}}
+          {{product.title}}
         </div>
         <div class="time" style="color:#a8a8a8;">
-          8 hour ago
+          {{product?.create_At | date:'short' }}
         </div>
         <div class="line">
         </div>
@@ -46,5 +28,5 @@
         </div>
       </div>
     </div>
-</ng-template>
+  </ng-template>
 </p-dataView>

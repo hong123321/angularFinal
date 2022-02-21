@@ -1,79 +1,78 @@
+<form [formGroup]="forms" (ngSubmit)="addUser(forms.value)">
+  <div class="form-group " style=" font-size:large">
+    <label for="">Name</label>
+    <div class="p-inputgroup group p-col-4  ">
+      <label class="p-inputgroup-addon"><i class="pi pi-user"></i></label>
+      <input class="form-control" pInputText type="text" name="name" required formControlName="username"
+        placeholder="Username">
+    </div>
+    <div *ngIf="name.invalid && (name.dirty || name.touched)">
+      <div *ngIf="name.errors?.required" class="validate">
+        <p>Name is required.</p>
+      </div>
+      <div *ngIf="name.errors?.minlength" class="validate">
+        <p> Name must be at least 6 characters long.</p>
+      </div>
+    </div>
+    <label for="">Password</label>
+    <div class="p-inputgroup group p-col-4  ">
+      <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+      <input class="form-control" pInputText type="text" name="name" required formControlName="password"
+        placeholder="Password">
+    </div>
+    <div *ngIf="password.invalid && (password.dirty || password.touched)">
+      <div *ngIf="password.errors?.required" class="validate">
+        <p>Password is required.</p>
+      </div>
+      <div *ngIf="password.errors?.minlength" class="validate">
+        <p>Password must be at least 6 characters long.</p>
+      </div>
+    </div>
+    <label for="">Age</label>
+    <div class="p-inputgroup group p-col-4">
+      <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+      <input class="form-control" pInputText type="number" name="name" required formControlName="age" placeholder="Age">
+    </div>
+    <div *ngIf="age.invalid && (age.dirty || age.touched)">
+      <div *ngIf="age.errors?.required" class="validate">
+        <p> Age is required.</p>
+      </div>
+    </div>
+    <label for="">Email</label>
+    <div class="p-inputgroup group p-col-4">
+      <span class="p-inputgroup-addon"><i class="pi pi-phone"></i></span>
+      <input class="form-control" pInputText type="text" name="name" required formControlName="email"
+        placeholder="Email">
+    </div>
+    <div *ngIf="email.invalid && (email.dirty || email.touched)">
+      <div *ngIf="email.errors?.required" class="validate">
+        <p> Email is required.</p>
+      </div>
+    </div>
+    <label for="">Phone</label>
 
-<form 
-[formGroup]="forms"
-(ngSubmit)="addUser(forms.value)"
->
-<div class="form-group " style=" font-size:large">
-  <label for="">Name</label>
-<div class="p-inputgroup group p-col-4  "  >
-    <label class="p-inputgroup-addon"><i class="pi pi-user"></i></label>
-    <input class="form-control" pInputText type="text" name="name" required formControlName="username" placeholder="Username"   > 
-</div>
-<div *ngIf="name.invalid && (name.dirty || name.touched)">
-  <div *ngIf="name.errors?.required" class="validate">
-    <p>Name is required.</p>
-  </div>
-  <div *ngIf="name.errors?.minlength" class="validate">
-   <p> Name must be at least 6 characters long.</p>
-  </div>
-</div>
-<label for="">Password</label>
-<div class="p-inputgroup group p-col-4  "  >
-    <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-    <input class="form-control" pInputText type="text" name="name" required formControlName="password" placeholder="Password"   > 
-</div>
-<div *ngIf="password.invalid && (password.dirty || password.touched)">
-  <div *ngIf="password.errors?.required" class="validate">
-    <p>Password is required.</p>
-  </div>
-  <div *ngIf="password.errors?.minlength" class="validate">
-    <p>Password must be at least 6 characters long.</p>
-  </div>
-</div>
-<label for="">Age</label>
-<div class="p-inputgroup group p-col-4"  >
-  <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-  <input class="form-control" pInputText type="number" name="name" required formControlName="age" placeholder="Age"   > 
-</div>
-<div *ngIf="age.invalid && (age.dirty || age.touched)">
-  <div *ngIf="age.errors?.required" class="validate">
-   <p> Age is required.</p>
-  </div>
-</div>
-<label for="">Email</label>
-<div class="p-inputgroup group p-col-4"  >
-  <span class="p-inputgroup-addon"><i class="pi pi-phone"></i></span>
-  <input class="form-control" pInputText type="text" name="name" required formControlName="email" placeholder="Email" > 
-</div>
-<div *ngIf="email.invalid && (email.dirty || email.touched)">
-  <div *ngIf="email.errors?.required" class="validate">
-   <p> Email is required.</p>
-  </div>
-</div>
-<label for="">Phone</label>
+    <div class="p-inputgroup group p-col-4">
+      <span class="p-inputgroup-addon"><i class="pi pi-id-card"></i></span>
+      <input class="form-control" pInputText type="number" name="name" required formControlName="phone"
+        placeholder="Phone">
+    </div>
+    <div *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+      <div *ngIf="phone.errors?.required" class="validate">
+        <p>Phone is required.</p>
+      </div>
+    </div>
 
-<div class="p-inputgroup group p-col-4"  >
-  <span class="p-inputgroup-addon"><i class="pi pi-id-card"></i></span>
-  <input class="form-control" pInputText type="number" name="name" required formControlName="phone" placeholder="Phone"   > 
-</div>
-<div *ngIf="phone.invalid && (phone.dirty || phone.touched)">
-  <div *ngIf="phone.errors?.required" class="validate">
-    <p>Phone is required.</p>
+    <label for="">Address</label>
+    <div class="p-inputgroup group p-col-4">
+      <span class="p-inputgroup-addon"><i class="pi pi-id-card"></i></span>
+      <input class="form-control" pInputText type="text" name="name" required formControlName="address"
+        placeholder="Address">
+    </div>
+    <div *ngIf="address.invalid && (address.dirty || address.touched)">
+      <div *ngIf="address.errors?.required" class="validate">
+        <p>Address is required.</p>
+      </div>
+    </div>
   </div>
-</div>
-
-<label for="">Address</label>
-<div class="p-inputgroup group p-col-4"  >
-  <span class="p-inputgroup-addon"><i class="pi pi-id-card"></i></span>
-  <input class="form-control" pInputText type="text" name="name" required formControlName="address" placeholder="Address"   > 
-</div>
-<div *ngIf="address.invalid && (address.dirty || address.touched)">
-  <div *ngIf="address.errors?.required" class="validate">
-    <p>Address is required.</p>
-  </div>
-</div>
-</div>
-<p-button  type="submit" [disabled]="!forms.valid">Add User</p-button>
+  <p-button type="submit" [disabled]="!forms.valid">Add User</p-button>
 </form>
-
- 

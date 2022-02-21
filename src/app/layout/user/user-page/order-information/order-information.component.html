@@ -1,5 +1,5 @@
-<p-table id="table" [value]="listOrder"  >
-    
+<p-table id="table" [value]="listOrder">
+
   <ng-template pTemplate="header" let-columns>
     <tr>
       <th>Order number</th>
@@ -8,13 +8,12 @@
       <th>Price</th>
     </tr>
   </ng-template>
-  <ng-template pTemplate="body" let-list  let-rowIndex="rowIndex">
+  <ng-template pTemplate="body" let-list let-rowIndex="rowIndex">
     <tr>
       <td>{{rowIndex +1}}</td>
       <td>{{list.name}}</td>
       <td><img src="assets/images/{{list.img}}" height="100px" alt=""></td>
       <td>{{list.price}}</td>
-
     </tr>
   </ng-template>
 </p-table>
