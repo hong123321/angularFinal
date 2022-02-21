@@ -1,5 +1,6 @@
-.img img{
-  display: block;
+
+:host ::ng-deep .p-avatar img{
   margin-left: auto;
   margin-right: auto;
-}
+  object-fit: contain;
+} 

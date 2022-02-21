@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
@@ -8,31 +8,44 @@ export class ProductService {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/JSON' })
   };
-  apiPopular:string ="http://localhost:4545/stubs";
-  apiProduct:string="http://localhost:3000/popular";
-  cartAPI:string="http://localhost:3000/cart";
-  newsAPI:string="http://localhost:3004/news";
-  constructor(private http:HttpClient) { }
+  apiPopular = 'http://localhost:4545/stubs';
+  apiProduct = 'http://localhost:3000/popular';
+  cartAPI = 'http://localhost:3000/cart';
+  newsAPI = 'http://localhost:3000/news';
+  changeAvtAPI = 'http://localhost/angular/changeImg.php';
+  countValue: Subject<any> = new Subject();
 
-  getPopular():Observable<any>{
-    return this.http.get<any>(this.apiPopular)
+  constructor(private http: HttpClient) { }
+
+  getPopular(): Observable<any> {
+    return this.http.get<any>(this.apiPopular);
   }
-  getListCart(id:number):Observable<any>{
-    return this.http.get<any>(`${this.apiProduct}/${id}`)
+  getListCart(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiProduct}/${id}`);
   }
-  postListCart(value:any):Observable<any>{
-    return this.http.post<any>(this.cartAPI,value,this.httpOptions)
+  postListCart(value: any): Observable<any> {
+    return this.http.post<any>(this.cartAPI, value, this.httpOptions);
   }
-  getCartItem():Observable<any>{
-    return this.http.get<any>(this.cartAPI)
+  getCartItem(): Observable<any> {
+    return this.http.get<any>(this.cartAPI);
   }
-  dalateCartItem(id:any):Observable<any>{
-    return this.http.delete(`${this.cartAPI}/${id}`)
+  dalateCartItem(id: any): Observable<any> {
+    return this.http.delete(`${this.cartAPI}/${id}`);
   }
-  getNews():Observable<any>{
-    return this.http.get<any>(this.newsAPI)
+  getNews(): Observable<any> {
+    return this.http.get<any>(this.newsAPI);
   }
-  getNewsById(id):Observable<any>{
-    return this.http.get<any>(`${this.newsAPI}/${id}`)
+  getNewsById(id): Observable<any> {
+    return this.http.get<any>(`${this.newsAPI}/${id}`);
+  }
+  changeAvt(e:any,id:number):Observable<any>{
+    return this.http.put(`${this.changeAvtAPI}?id=${id}`, e , this.httpOptions);
+  }
+  public get ValueFromChild(): Subject<any> {
+    return this.countValue;
+  }
+
+  public notifyCountValue(number) {
+    this.countValue.next(number);
   }
 }

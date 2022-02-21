@@ -8,35 +8,38 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './layout/login/login.component';
 import { RegisterComponent } from './layout/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import {  MessageService } from "primeng/api";
+import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { MessagesModule } from 'primeng/messages';
 import { SnowModule } from 'snow';
-import {InputTextModule} from 'primeng/inputtext';
+import { InputTextModule } from 'primeng/inputtext';
+import { AuthGuard } from './shared/guard/auth.guard';
+import { AuthbackLogGuard } from './shared/guard/authback-log.guard';
 const routes: Routes = [
   {
     path: '',
-    loadChildren:() => import('./layout/user/module/user.module').then(m=>m.UserModule)
+    loadChildren: () => import('./layout/user/module/user.module').then(m => m.UserModule)
   },
   {
     path: 'user',
-    loadChildren:() => import('./layout/user/module/user.module').then(m=>m.UserModule)
+    loadChildren: () => import('./layout/user/module/user.module').then(m => m.UserModule)
   },
-
   {
     path: 'admin',
-    loadChildren: ()=> import('./layout/admin/module/admin.module').then(m=>m.AdminModule)
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./layout/admin/module/admin.module').then(m => m.AdminModule)
   },
   {
-    path:'login',
-    component:LoginComponent
-  },
-  {
-    path:'register',
-    component:RegisterComponent
-  }
-]
+    path: 'login',
+    canActivate: [AuthbackLogGuard],
+    component: LoginComponent,
 
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
+  }
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +57,7 @@ const routes: Routes = [
     MessagesModule,
     SnowModule,
     InputTextModule
-   
+
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

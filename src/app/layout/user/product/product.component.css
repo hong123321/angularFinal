@@ -35,3 +35,30 @@
 .p-grid{
   display: inline-flex;
 }
+.mt-20{
+  background-color: #fff;border: none;
+}
+:host ::ng-deep .p-cart {
+  background-color: antiquewhite;
+  border: none;
+  color:chartreuse
+} 
+:host ::ng-deep .p-cart:hover{
+  background-color: aquamarine;
+}
+.cart_icon{
+ position: relative;
+
+}
+.cart_icon i {
+  font-size:3em; font-weight: 900;
+}
+.cart_number{
+  width: 20px;
+  background: darksalmon;
+  right: -30%;
+  position: absolute;
+  margin-right: 0.5rem;
+  top: -10%;
+  border-radius: 50%;
+}

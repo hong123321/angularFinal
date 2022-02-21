@@ -3,24 +3,26 @@ import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTr
 import { Observable } from 'rxjs';
 import { JwtService } from '../service/jwt.service';
 
-
 @Injectable({
-  providedIn: 'root',
-
+  providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
-  constructor(private auth: JwtService,
-              private myRoute: Router){
-  }
+export class AuthbackLogGuard implements CanActivate {
+  constructor(
+    private auth: JwtService,
+    private myRoute: Router
+  ){}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      if (this.auth.isLoggednIn() || this.auth.getTokenInLoCalofAdmin()){
-        return true;
-      }else{
-        this.myRoute.navigate(['login']);
+    if (!this.auth.isLoggednIn() && !this.auth.isLoggednIn_admin()){
+      return true;
+    }else{
+      if(this.auth.isLoggednIn()){
+        this.myRoute.navigate(['home']);
         return false;
+      }else{
+        this.myRoute.navigate(['admin']);
       }
+    }
   }
-
 }

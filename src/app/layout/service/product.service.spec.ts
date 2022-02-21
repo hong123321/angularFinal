@@ -1,10 +1,20 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { ProductService } from './product.service';
 
 describe('ProductService', () => {
   let service: ProductService;
-
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports:[
+        HttpClientTestingModule,
+        RouterTestingModule 
+      ],
+    })
+    .compileComponents();
+  });
   beforeEach(() => {
     TestBed.configureTestingModule({});
     service = TestBed.inject(ProductService);

@@ -35,7 +35,6 @@ import { PersonalInformationComponent } from '../user-page/personal-information/
 import { OrderInformationComponent } from '../user-page/order-information/order-information.component';
 import { ChangePasswordComponent } from '../user-page/personal-information/change-password/change-password.component';
 import { DetailNewsComponent } from '../news/detail-news/detail-news.component';
-
 import {PaginatorModule} from 'primeng/paginator';
 const routes: Routes = [
   {
@@ -77,9 +76,6 @@ const routes: Routes = [
       }
     ]
   },
-
-    
-      
 ]
 @NgModule({
   declarations: [

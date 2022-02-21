@@ -6,16 +6,15 @@ import { ProductService } from '../../service/product.service';
   styleUrls: ['./news.component.css']
 })
 export class NewsComponent implements OnInit {
-  dataNews:any[]
-  constructor(private service:ProductService) { }
+  dataNews: any[];
+  constructor(private service: ProductService) { }
 
   ngOnInit(): void {
-    this.service.getNews().subscribe(data=>{
-      this.dataNews=data
+    this.service.getNews().subscribe(data => {
+      this.dataNews = data;
       console.log(this.dataNews);
-      
     }
-    )
+    );
   }
 
 }

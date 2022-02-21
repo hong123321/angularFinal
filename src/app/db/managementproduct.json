@@ -116,18 +116,29 @@
       ],
       "id_user": 23,
       "id": 9
-    }
-  ],
-  "cart": [
+    },
     {
-      "name": "Smart Tivi Samsung 4K Crystal UHD 50 inch UA50AU8100",
-      "price": "25000000",
-      "vote": 86,
-      "img": "dt3.jpg",
-      "view": 48,
-      "id": "3"
+      "name": "name 112",
+      "age": 12,
+      "phone": "name 112",
+      "address": "name 112",
+      "id_product": "1",
+      "create_At": "2022-02-21T09:07:54.003Z",
+      "product": [
+        {
+          "name": "Máy lọc nước R.O nóng lạnh Hydrogen Kangaroo KG10A4VTU 10 lõi ",
+          "price": "10900000",
+          "vote": 90,
+          "img": "dt1.jpg",
+          "view": 90,
+          "id": 1
+        }
+      ],
+      "id_user": 24,
+      "id": 10
     }
   ],
+  "cart": [],
   "popular": [
     {
       "name": "Máy lọc nước R.O nóng lạnh Hydrogen Kangaroo KG10A4VTU 10 lõi ",
@@ -208,6 +219,14 @@
       "img": "dt10.jpg",
       "view": 78,
       "id": 10
+    },
+    {
+      "name": "name 112",
+      "img": "ban-co-smartwatch-cu-va-dang-me-dam-apple-watch-se.jpg",
+      "price": 213,
+      "vote": 123,
+      "view": 213,
+      "id": 11
     }
   ],
   "news": [
@@ -216,6 +235,7 @@
       "decription": "Cơ hội sở hữu hàng ngàn mã giảm giá từ 2% đến 5% tại Điện máy XANH khi tham gia chương trình mini game: Săn sale cuối tuần - Rinh quà liền tay. Tham gia ngay để nhận mã khuyến mãi và sở hữu sản phẩm chất lượng với giá cực SỐC ngay hôm nay!",
       "image": "news1.png",
       "content": "Trong thời gian diễn ra chương trình Săn sale cuối tuần - Nhận quà liền tay -  khách hàng có cơ hội nhận mã giảm ngẫu nhiên 2%, 3%, 5% khi tham gia chơi mini game tại Điện máy XANH và Thế Giới Di Động",
+      "create_At": "2022-02-15T02:38:53.184Z",
       "id": 1
     },
     {
@@ -223,6 +243,7 @@
       "decription": "Nhằm mang đến cho quý khách hàng cơ hội sở hữu combo máy sấy quần áo và máy giặt với mức giá ưu đãi, Điện máy XANH ra mắt chương trình khuyến mãi giảm 10% cho máy sấy Samsung khi mua kèm máy giặt Samsung. Chi tiết như sau!",
       "image": "news2.jpg",
       "content": "Trong thời gian khuyến mãi, khách hàng khi mua các sản phẩm máy giặt Samsung lồng ngang (theo danh sách áp dụng) tại Điện máy XANH sẽ được mua kèm 1 trong 4 sản phẩm máy sấy quần áo Samsung với giá ưu đãi, cụ thể: Giảm 10%",
+      "create_At": "2022-02-15T02:38:53.184Z",
       "id": 2
     },
     {
@@ -230,6 +251,7 @@
       "decription": "Chào đón bộ ba flagship mới nhất của Samsung chính thức lên kệ tại Việt Nam với hàng loạt tính năng và giá bán hấp dẫn. Đặc biệt, khi đăng kí đặt gạch Galaxy S22 Series tại Điện máy XANH, bạn sẽ được sở hữu siêu phẩm sớm nhất cùng với quà tặng đến 7 triệu. Chi tiết như sau!",
       "image": "news3.jpg",
       "content": "Trong thời gian khuyến mãi, khách hàng đặt trước bộ ba flagship Galaxy S22 Series tại Điện máy XANH sẽ nhận được ưu đãi cực hấp dẫn, cụ thể",
+      "create_At": "2022-02-15T02:38:53.184Z",
       "id": 3
     },
     {
@@ -237,7 +259,16 @@
       "decription": "Từ ngày 14/2 - 28/2/2022, khách hàng khi mua tivi Sony tại Điện máy XANH không chỉ được hưởng mức giá ưu đãi mà còn có cơ hội sở hữu Soundbar, dàn âm thanh Sony với mức giảm đến 42% khi mua kèm. Xem ngay thông tin chi tiết chương trình để không bỏ lỡ cơ hội này nhé!",
       "image": "news4.jpg",
       "content": "Trong thời gian khuyến mãi, khách hàng mua tivi Sony OLED hoặc tivi LED 43 inch trở lên (trong danh sách khuyến mãi) sẽ được hưởng các chương trình ưu đãi sau: Được mua kèm 1 trong 4 loa thanh Soundbar, dàn âm thanh Sony với giá ưu đãi, giảm đến 42% trên giá tiền khi mua kèm, áp dụng tùy tivi.Khuyến mãi áp dụng đặt mua online và đặt mua tại siêu thị.",
+      "create_At": "2022-02-15T02:38:53.184Z",
       "id": 4
+    },
+    {
+      "title": "Bạn có smartwatch cũ và đang mê đắm Apple Watch Series 7, Samsung Galaxy Watch 4? Tham gia thu cũ đổi mới ngay thôi!",
+      "decription": "Bạn có smartwatch cũ nhưng đang mê đắm và luôn muốn sở hữu Apple Watch S7, S6 và Galaxy Watch 4? Mách bạn một cách này siêu hay, tham gia liền chương trình 'Thu cũ đổi mới' của Thế Giới Di Động và Điện máy XANH để vừa có cơ hội lên đời đồng hồ yêu vừa được trợ giá lên đến 666k cực ngon.",
+      "image": "ban-co-smartwatch-cu-va-dang-me-dam-apple-watch-se.jpg",
+      "content": "- Thu smartwatch cũ, lên đời Apple Watch S7 hoặc Samsung Galaxy Watch 4.\n\n- Giá thu máy cũ lên đến 6.950.000 đồng, tham khảo mức giá thu cũ theo loại máy TẠI ĐÂY.\n\n- Đã vậy, còn kèm trợ giá 666.000 đồng để đổi sang Apple Watch S7 và 333.000 đồng khi đổi sang Samsung Galaxy Watch 4.",
+      "create_At": "2022-02-18T06:52:10.909Z",
+      "id": 5
     }
   ]
 }

@@ -18,7 +18,8 @@ export class NewsComponent implements OnInit {
       title:['',[Validators.required]],
       decription:['',[Validators.required]],
       image:['',[Validators.required]],
-   
+      content:['',Validators.required],
+      create_At:[new Date()],
     })
   }
   onSubmit(e){

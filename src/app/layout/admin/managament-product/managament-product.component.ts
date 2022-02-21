@@ -7,30 +7,19 @@ import { AdminService } from '../../service/admin.service';
   styleUrls: ['./managament-product.component.css']
 })
 export class ManagamentProductComponent implements OnInit {
-  user:any[]
-  id:any
-  product:any[]=[]
-  constructor(private data:AdminService) { }
-
+  user: any[];
+  id: any;
+  product: any[]=[];
+  constructor(private data: AdminService) { }
   ngOnInit(): void {
-    this.data.getOrderProduct().subscribe(datas=>
+    this.data.getOrderProduct().subscribe(datas =>
           {
             this.user=datas;
-            datas.forEach(element => {
-              this.product.push(element.product)
+            datas.forEach( element => {
+              this.product.push(element.product);
             });
           }
-      )
-    console.log(this.product);
-    
-    
-    //  console.log(this.user);
-    //  console.log(this.product);
-     
-      
-    
-    
-    
+      );
   }
 
 }

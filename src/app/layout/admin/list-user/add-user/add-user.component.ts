@@ -11,8 +11,14 @@ import { AdminService } from 'src/app/layout/service/admin.service';
   styleUrls: ['./add-user.component.css']
 })
 export class AddUserComponent implements OnInit {
-  forms: FormGroup
-  constructor(public ref: DynamicDialogRef,private fn: FormBuilder,private data:AdminService, private confirms:ConfirmationService,private mess:MessageService,public config: DynamicDialogConfig) { }
+  forms: FormGroup;
+  constructor(
+    public ref: DynamicDialogRef,
+    private fn: FormBuilder,
+    private data: AdminService,
+    private confirms: ConfirmationService,
+    private mess: MessageService,
+    public config: DynamicDialogConfig) { }
 
   ngOnInit(): void {
     this.forms= this.fn.group({
@@ -25,7 +31,7 @@ export class AddUserComponent implements OnInit {
     })
   }
 
-  addUser(e:any){
+  addUser(e: any){
     console.log(e)
     const user = this.config.data.data
     this.confirms.confirm({
@@ -35,11 +41,11 @@ export class AddUserComponent implements OnInit {
       accept:()=>{
         this.data.addUser(e).subscribe(
           data =>  {
-            this.mess.add({key: 'c',severity:'success', summary: 'Successful', detail: 'User Add Complete', life: 3000});
+            this.mess.add({key: 'c', severity: 'success', summary: 'Successful', detail: 'User Add Complete', life: 3000});
             user.push(e)
             this.ref.close();
           },
-          err  =>  this.mess.add({key: 'c',severity:'error', summary: 'Successful', detail: 'User delete Fail', life: 5000})
+          err  =>  this.mess.add({key: 'c', severity: 'error', summary: 'Successful', detail: 'User delete Fail', life: 5000})
         )
       }
     })
@@ -51,5 +57,3 @@ export class AddUserComponent implements OnInit {
   get age() { return this.forms.get('age'); }
   get address() { return this.forms.get('address'); }
 }
-   
-  

@@ -1,4 +1,7 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 
 import { ChangePasswordComponent } from './change-password.component';
 
@@ -8,7 +11,15 @@ describe('ChangePasswordComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ChangePasswordComponent ]
+      declarations: [ ChangePasswordComponent ],
+      imports:[
+        HttpClientTestingModule,
+        ReactiveFormsModule
+      ],
+      providers:[
+        DynamicDialogConfig,
+        DynamicDialogRef
+      ]
     })
     .compileComponents();
   });

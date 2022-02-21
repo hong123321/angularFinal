@@ -7,6 +7,7 @@
   margin-left: auto;
   border-radius: 50%;
   border: dashed;
+  width: 25%;
 }
 .user_manu{
   margin-top: 10%;
@@ -17,4 +18,20 @@
 }
 .user_name h3{
   padding: 0;
+}
+.user_avt {
+  display: grid;
+}
+.user_avt label{
+  margin-left: auto;
+  margin-right: auto;
+  color: crimson
+}
+.user_avt input{
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
 }

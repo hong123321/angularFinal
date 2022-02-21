@@ -1,7 +1,7 @@
 <button pButton type="button" style="margin: 1em;" label="Add new user" icon="pi pi-plus-circle" (click)="addUser()"
   class="p-button-outlined"></button>
 <p-table id="table" #table [columns]="cols" [value]="listUser" [paginator]="true" [rows]="10"
-  [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]">
+  [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" >
 
   <ng-template pTemplate="header" let-columns>
     <tr>
