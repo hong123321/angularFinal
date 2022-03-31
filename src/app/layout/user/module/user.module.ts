@@ -36,41 +36,58 @@ import { OrderInformationComponent } from '../user-page/order-information/order-
 import { ChangePasswordComponent } from '../user-page/personal-information/change-password/change-password.component';
 import { DetailNewsComponent } from '../news/detail-news/detail-news.component';
 import {PaginatorModule} from 'primeng/paginator';
+import { PersonalComponent } from '../oder/personal/personal.component';
+import { PaymentComponent } from '../oder/payment/payment.component';
+import { ConfirmComponent } from '../oder/confirm/confirm.component';
+import { CardModule } from 'primeng/card';
 const routes: Routes = [
   {
     path: '',
-    component:HomeComponent,
-    children:[
+    component: HomeComponent,
+    children: [
       {
       path: 'home',
       component: ProductComponent,
-     
       },
       {
         path: 'news',
         component: NewsComponent,
       },
       {
-        path:'detail',
-        component:DetailNewsComponent
+        path: 'detail',
+        component: DetailNewsComponent
       },
       {
-        path:'order',
-        canActivate:[AuthGuard],
-        component:OderComponent,
+        path: 'order',
+        canActivate: [AuthGuard],
+        component: OderComponent,
+        children: [
+        {
+          path: 'personal',
+          component: PersonalComponent
+        },
+        {
+          path: 'payment',
+          component: PaymentComponent
+        },
+        {
+          path: 'confirmation',
+          component: ConfirmComponent
+        }
+      ]
       },
       {
-        path:'user',
-        canActivate:[AuthGuard],
-        component:UserPageComponent,
-        children:[
+        path: 'user',
+        canActivate: [AuthGuard],
+        component: UserPageComponent,
+        children: [
           {
-            path:'information',
-            component:PersonalInformationComponent
+            path: 'information',
+            component: PersonalInformationComponent
           },
           {
-            path:'orderinformation',
-            component:OrderInformationComponent
+            path: 'orderinformation',
+            component: OrderInformationComponent
           }
         ]
       }
@@ -89,7 +106,10 @@ const routes: Routes = [
     PersonalInformationComponent,
     OrderInformationComponent,
     ChangePasswordComponent,
-    DetailNewsComponent
+    DetailNewsComponent,
+    PersonalComponent,
+    PaymentComponent,
+    ConfirmComponent
   ],
   imports: [
     CommonModule,
@@ -113,7 +133,8 @@ const routes: Routes = [
     AvatarModule,
     AvatarGroupModule,
     PanelMenuModule,
-    PaginatorModule
+    PaginatorModule,
+    CardModule
   ],
   providers:[ConfirmationService,MessageService,JwtService,AuthGuard]
 })

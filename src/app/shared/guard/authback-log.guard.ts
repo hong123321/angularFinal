@@ -14,13 +14,13 @@ export class AuthbackLogGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if (!this.auth.isLoggednIn() && !this.auth.isLoggednIn_admin()){
+    if (!this.auth.isLoggednIn() || !this.auth.isLoggednIn_admin()){
       return true;
     }else{
-      if(this.auth.isLoggednIn()){
+      if(this.auth.isLoggednIn() ){
         this.myRoute.navigate(['home']);
         return false;
-      }else{
+      }else {
         this.myRoute.navigate(['admin']);
       }
     }

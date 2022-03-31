@@ -7,7 +7,6 @@ import { JwtService } from 'src/app/shared/service/jwt.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  
   items: MenuItem[];
   text = 'Log out';
   constructor(
@@ -44,10 +43,10 @@ export class HeaderComponent implements OnInit {
         label: this.text,
         icon: 'pi pi-sign-out',
       }
-    ]
+    ];
   }
   menu(event){
-    if(event.target.innerText === this.text){
+    if (event.target.innerText === this.text){
       this.confirm.confirm({
         message: 'Are you sure you want to Log Out ?',
         header: 'Confirm',

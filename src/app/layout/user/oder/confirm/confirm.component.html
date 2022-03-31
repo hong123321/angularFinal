@@ -1,0 +1,34 @@
+
+<p-card>
+  <ng-template pTemplate="content">
+    <div class="field col-12">
+        <label for="class">Name :</label>
+        <br><strong>{{ticketInformation.name ? ticketInformation.name : '-'}}</strong>
+    </div>
+    <div class="field col-12">
+        <label for="Age">Age :</label>
+        <br><strong>{{ticketInformation.age ? ticketInformation.age : '-'}}</strong>
+    </div>
+    <div class="field col-12">
+      <label for="Age">Phone :</label>
+      <br><strong>{{ticketInformation.phone ? ticketInformation.phone : '-'}}</strong>
+  </div>
+  <div class="field col-12">
+    <label for="Age">Address :</label>
+    <br><strong>{{ticketInformation.address ? ticketInformation.address :'-'}}</strong>
+  </div>
+    <div class="field col-12">
+        <label for="Age">Cardholder Name :</label>
+    <br><strong>{{ticketInformation.card_name ? ticketInformation.card_name : '-'}}</strong>
+    </div>
+    <div class="field col-12">
+        <label for="Age">Card Number :</label>
+        <br><strong>{{ticketInformation.card_number ? ticketInformation.card_number : '-'}}</strong>
+    </div>
+  </ng-template>
+</p-card>
+<p-toast position="top-right" key="c" [baseZIndex]="3000"></p-toast>
+<div class="p-grid p-grid-nogutter p-jc-between" style="margin-top: 20px;">
+  <p-button label="Back" (click)="prevPage()"  icon="pi pi-angle-left"></p-button>
+  <p-button label="Complete" (click)="complete()"   icon="pi pi-angle-right" iconPos="right"></p-button>
+</div>

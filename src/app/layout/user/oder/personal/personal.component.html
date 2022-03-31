@@ -1,0 +1,34 @@
+<form class="p-col-12"  #bookForm="ngForm" >
+  <div class="form-group">
+    <div class="p-inputgroup p-col-12">
+      <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+      <input class="form-control" #name="ngModel" id="name" pInputText type="text" name="name" [(ngModel)]="personalInformation.name"
+        placeholder="Username" required [ngClass]="{'ng-dirty': (name.invalid) && (name.dirty || name.touched)}">
+    </div>
+    <small *ngIf="name.invalid && (name.touched || name.dirty)" class="p-error">Name is required.</small>
+    <div class="p-inputgroup p-col-12">
+      <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+      <input class="form-control" #age="ngModel" id="age" required [ngClass]="{'ng-dirty': (age.invalid) && (age.dirty || age.touched)}"  pInputText type="number" name="age"  
+      [(ngModel)]="personalInformation.age"
+        placeholder="Age">
+    </div>
+    <small *ngIf="age.invalid && (age.touched || name.dirty)" class="p-error">Age is required.</small>
+    <div class="p-inputgroup p-col-12">
+      <span class="p-inputgroup-addon"><i class="pi pi-phone"></i></span>
+      <input class="form-control" #phone="ngModel" id="phone" pInputText  type="text" name="phone" required
+      [ngClass]="{'ng-dirty': (phone.invalid) && (phone.dirty || phone.touched)}"
+      [(ngModel)]="personalInformation.phone"
+        placeholder="Phone">
+    </div>
+    <small *ngIf="phone.invalid && (phone.touched || name.dirty)" class="p-error">Phone is required.</small>
+    <div class="p-inputgroup p-col-12">
+      <span class="p-inputgroup-addon"><i class="pi pi-id-card"></i></span>
+      <input class="form-control"  #address="ngModel" id="address" pInputText type="text" name="address" required  [ngClass]="{'ng-dirty': (address.invalid) && (address.dirty || address.touched)}" [(ngModel)]="personalInformation.address"
+        placeholder="Address">
+    </div>
+    <small *ngIf="address.invalid && (address.touched || name.dirty)" class="p-error">Address is required.</small>
+  </div>
+</form>
+<div class="p-d-flex p-jc-sm-end">
+  <p-button  label="NextPage" (click)="next(bookForm.value)" icon="pi pi-angle-right"></p-button>
+</div>

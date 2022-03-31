@@ -77,9 +77,10 @@ processFile(e: any) {
   const reader = new FileReader();
   this.imagePath = files;
   reader.readAsDataURL(files[0]);
+  // tslint:disable-next-line: variable-name
   reader.onload = (_event) => {
       this.url = reader.result;
-      this.hide = false
+      this.hide = false;
   };
   const id = localStorage.getItem('token');
   this.selectedFile = e.target.files[0];
@@ -88,15 +89,12 @@ processFile(e: any) {
   };
   const uploadData = new FormData();
   uploadData.append('myfile', this.selectedFile, this.selectedFile.name);
-  // this.http.post('http://localhost/angular/uploadAvatar.php', uploadData, {
-  //   reportProgress: true,
-  //   observe: 'events'
-  // }).subscribe(
-  //   data =>{ 
-  //   }
-  // );
+  this.http.post('http://localhost/angular/uploadAvatar.php', uploadData, {
+    reportProgress: true,
+    observe: 'events'
+  }).subscribe();
   this.productSerive.changeAvt(dataImage, Number(id)).subscribe(
-    data=> {
+    data => {
       this.mess.add({key: 'c', severity: 'success', summary: 'Success', detail: 'Change Avatar Success'});
     }
   );

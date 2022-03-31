@@ -118,27 +118,90 @@
       "id": 9
     },
     {
-      "name": "name 112",
+      "name": "hongle",
       "age": 12,
-      "phone": "name 112",
-      "address": "name 112",
-      "id_product": "1",
-      "create_At": "2022-02-21T09:07:54.003Z",
+      "phone": "12321",
+      "address": "HCM",
+      "card_name": "VIETTINBAMK",
+      "card_number": 123456789,
+      "id_product": "5",
+      "idProduct_RD": "5.328164902668109",
+      "id_user": 24,
+      "create_At": "2022-02-23T01:51:21.840Z",
       "product": [
         {
-          "name": "Máy lọc nước R.O nóng lạnh Hydrogen Kangaroo KG10A4VTU 10 lõi ",
-          "price": "10900000",
-          "vote": 90,
-          "img": "dt1.jpg",
-          "view": 90,
-          "id": 1
+          "name": "Tủ lạnh Samsung Inverter 655 lít RS62R5001M9/SV",
+          "price": "3500000",
+          "vote": 84,
+          "img": "dt5.jpg",
+          "view": 78,
+          "id": 5
         }
       ],
-      "id_user": 24,
       "id": 10
+    },
+    {
+      "name": "12",
+      "age": 12,
+      "phone": "12",
+      "address": "12",
+      "card_name": "12",
+      "card_number": 12,
+      "id_product": "6",
+      "idProduct_RD": "6.009798037799438",
+      "id_user": 23,
+      "create_At": "2022-02-23T03:32:32.008Z",
+      "product": [
+        {
+          "name": "Máy lạnh LG Inverter 1.5 HP V13ENH",
+          "price": "14000000",
+          "vote": 74,
+          "img": "dt6.jpg",
+          "view": 88,
+          "id": 6
+        }
+      ],
+      "id": 11
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "name": "Tủ lạnh Samsung Inverter 655 lít RS62R5001M9/SV",
+      "price": "3500000",
+      "vote": 84,
+      "img": "dt5.jpg",
+      "view": 78,
+      "id": 5.158617845942838,
+      "idUser": "23"
+    },
+    {
+      "name": "Máy lọc nước R.O nóng lạnh Hydrogen Kangaroo KG10A4VTU 10 lõi ",
+      "price": "10900000",
+      "vote": 90,
+      "img": "dt1.jpg",
+      "view": 90,
+      "id": 1.2979504346719595,
+      "idUser": "23"
+    },
+    {
+      "name": "Máy lọc nước R.O nóng lạnh Hydrogen Kangaroo KG10A4VTU 10 lõi ",
+      "price": "10900000",
+      "vote": 90,
+      "img": "dt1.jpg",
+      "view": 90,
+      "id": 1.247053318647208,
+      "idUser": "23"
+    },
+    {
+      "name": "Máy lọc nước R.O nóng lạnh Hydrogen Kangaroo KG10A4VTU 10 lõi ",
+      "price": "10900000",
+      "vote": 90,
+      "img": "dt1.jpg",
+      "view": 90,
+      "id": 1.9126234808278668,
+      "idUser": "27"
+    }
+  ],
   "popular": [
     {
       "name": "Máy lọc nước R.O nóng lạnh Hydrogen Kangaroo KG10A4VTU 10 lõi ",
@@ -227,6 +290,30 @@
       "vote": 123,
       "view": 213,
       "id": 11
+    },
+    {
+      "name": "san pham moi",
+      "img": "image001.png",
+      "price": 12000000,
+      "vote": 123321,
+      "view": 12,
+      "id": 12
+    },
+    {
+      "name": "12",
+      "img": "mat sau.jpg",
+      "price": 12,
+      "vote": 12,
+      "view": 12,
+      "id": 13
+    },
+    {
+      "name": "12",
+      "img": "ban-co-smartwatch-cu-va-dang-me-dam-apple-watch-se.jpg",
+      "price": 12,
+      "vote": 12,
+      "view": 12,
+      "id": 14
     }
   ],
   "news": [
@@ -269,6 +356,46 @@
       "content": "- Thu smartwatch cũ, lên đời Apple Watch S7 hoặc Samsung Galaxy Watch 4.\n\n- Giá thu máy cũ lên đến 6.950.000 đồng, tham khảo mức giá thu cũ theo loại máy TẠI ĐÂY.\n\n- Đã vậy, còn kèm trợ giá 666.000 đồng để đổi sang Apple Watch S7 và 333.000 đồng khi đổi sang Samsung Galaxy Watch 4.",
       "create_At": "2022-02-18T06:52:10.909Z",
       "id": 5
+    },
+    {
+      "title": "Đặt trước Robot hút bụi Xiaomi Mop 2 series nhận ngay ưu đãi lên đến 2.190.000đ + Trả góp 0%",
+      "decription": "Đặt trước Robot hút bụi Xiaomi Mop 2 series nhận ngay ưu đãi lên đến 2.190.000đ + Trả góp 0%\nĐăng lúc 12h00, 18/02/2022 372 lượt xem\nĐiện máy XANH chính thức mở đặt trước Robot hút bụi Xiaomi Mop 2 series - Chuyên gia làm sạch ngôi nhà của bạn với giá bán cực hấp dẫn cùng nhiều khuyến mãi, quà tặng đi kèm đến 2.190.000đ, trả góp 0%. Đặt trước liền tay - Nhận ngay ưu đãi!CGHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
+      "image": "dat-truoc-robot-hut-bui-xiaomi-mop-2-series-nhan-n.png",
+      "content": " Chương trình có cọc 500,000đ.\n\n- Khuyến mãi căn cứ vào thời gian đặt cọc hoặc sẽ kết thúc sớm hơn dự kiến.\n\n- Không áp dụng trả góp Alepay, trả trước 0đ.\n\n- Không áp dụng kèm khuyến mãi khác.\n\n- Điện Máy XANH xin phép từ chối khách hàng bán buôn, mua số lượng lớn...\n\n- Một số điện thoại mua được tối đa 2 sản phẩm.",
+      "create_At": "2022-02-23T03:41:10.683Z",
+      "id": 6
+    },
+    {
+      "title": "xfz",
+      "decription": "sdgf",
+      "image": "C:\\fakepath\\dat-truoc-robot-hut-bui-xiaomi-mop-2-series-nhan-n.png",
+      "content": "sdgef",
+      "create_At": "2022-03-01T09:58:02.928Z",
+      "id": 7
+    },
+    {
+      "title": "ửtb",
+      "decription": "ửtg",
+      "image": "C:\\fakepath\\dat-truoc-robot-hut-bui-xiaomi-mop-2-series-nhan-n.png",
+      "content": "rt",
+      "create_At": "2022-03-01T09:58:17.071Z",
+      "id": 8
+    },
+    {
+      "title": "rưhe",
+      "decription": "ửt",
+      "image": "dat-truoc-robot-hut-bui-xiaomi-mop-2-series-nhan-n.png",
+      "content": "te",
+      "create_At": "2022-03-01T09:59:47.781Z",
+      "id": 9
+    },
+    {
+      "title": "áehtrb",
+      "decription": "zdfs",
+      "image": "C:\\fakepath\\dat-truoc-robot-hut-bui-xiaomi-mop-2-series-nhan-n.png",
+      "content": "strh",
+      "create_At": "2022-03-01T10:00:56.930Z",
+      "id": 10
     }
   ]
 }

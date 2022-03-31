@@ -5,7 +5,7 @@ import { PrimeNGConfig } from 'primeng/api';
 import { ActivatedRoute, Router } from '@angular/router';
 import { JwtService } from 'src/app/shared/service/jwt.service';
 import { ProductService } from 'src/app/layout/service/product.service';
-import { config } from 'process';
+import { filter } from 'rxjs/operators';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -33,7 +33,7 @@ export class CartComponent implements OnInit {
     this.hide = this.auth.isLoggednIn();
     this.primengConfig.ripple = true;
     this.productService.getCartItem().subscribe(data => {
-      this.listCart = data;
+      this.listCart = data.filter(el => el.idUser===localStorage.getItem('token'));
       this.lengthItem = this.listCart.length;
     });
   }
@@ -49,10 +49,10 @@ export class CartComponent implements OnInit {
         this.productService.dalateCartItem(id).subscribe();
         this.mess.add({ severity: 'success', key: 'c', summary: 'Successful', detail: 'Products Deleted', life: 3000 });
         if (this.listCart.length === 0) {
-          this.ref.close()
+          this.ref.close();
         }
       }
-    })
+    });
   }
   buy(id: number) {
     const idRD = id ;
@@ -72,5 +72,9 @@ export class CartComponent implements OnInit {
       this.ref.close();
       this.routes.navigate(['order', { id: ids, id_RD: idRD }]);
     }
+  }
+  login(){
+    this.ref.close();
+    this.routes.navigate(['/login']);
   }
 }

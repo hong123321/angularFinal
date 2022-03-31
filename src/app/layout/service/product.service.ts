@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
@@ -15,6 +15,15 @@ export class ProductService {
   changeAvtAPI = 'http://localhost/angular/changeImg.php';
   countValue: Subject<any> = new Subject();
 
+  ticketInformation = {
+        name: '',
+        age: '',
+        phone: '',
+        address: '',
+        card_name: '',
+        card_number: '',
+    };
+private paymentComplete = new Subject<any>();
   constructor(private http: HttpClient) { }
 
   getPopular(): Observable<any> {
@@ -38,9 +47,29 @@ export class ProductService {
   getNewsById(id): Observable<any> {
     return this.http.get<any>(`${this.newsAPI}/${id}`);
   }
-  changeAvt(e:any,id:number):Observable<any>{
+  changeAvt(e: any, id: number): Observable<any>{
     return this.http.put(`${this.changeAvtAPI}?id=${id}`, e , this.httpOptions);
   }
+  paymentComplete$ = this.paymentComplete.asObservable();
+
+    getTicketInformation() {
+        return this.ticketInformation;
+    }
+
+    setTicketInformation(ticketInformation) {
+        this.ticketInformation = ticketInformation;
+    }
+
+    complete() {
+        this.paymentComplete.next(this.ticketInformation = {
+          name: '',
+          age: '',
+          phone: '',
+          address: '',
+          card_name: '',
+          card_number: '',
+      });
+    }
   public get ValueFromChild(): Subject<any> {
     return this.countValue;
   }

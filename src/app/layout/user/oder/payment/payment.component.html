@@ -1,0 +1,21 @@
+<form class="p-col-12" #bookForm="ngForm" >
+  <div class="form-group">
+    <div class="p-inputgroup p-col-12">
+      <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+      <input class="form-control" #card_name='ngModel' pInputText type="text" name="cart_name" required [ngClass]="{'ng-dirty': (card_name.invalid) && (card_name.dirty || card_name.touched)}" [(ngModel)]="personalInformation.card_name"
+        placeholder="Card Name">
+    </div>
+    <small *ngIf="card_name.invalid && (card_name.touched || card_name.dirty)" class="p-error">Card_name is required.</small>
+    <div class="p-inputgroup p-col-12">
+      <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+      <input class="form-control" #card_number='ngModel' pInputText type="number" name="card_number" required [ngClass]="{'ng-dirty': (card_number.invalid) && (card_number.dirty || card_number.touched)}" [(ngModel)]="personalInformation.card_number" 
+        placeholder="Card Number">
+    </div>
+    <small *ngIf="card_number.invalid && (card_number.touched || card_number.dirty)" class="p-error">Card_number is required.</small>
+  </div>
+</form>
+
+<div class="p-grid p-grid-nogutter p-jc-between">
+  <p-button label="Back" (click)="prevPage()"  icon="pi pi-angle-left"></p-button>
+  <p-button label="NextPage" (click)="next(bookForm.value)"  icon="pi pi-angle-right" iconPos="right"></p-button>
+</div>

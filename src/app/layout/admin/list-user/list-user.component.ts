@@ -19,22 +19,24 @@ export class ListUserComponent implements OnInit {
     private mess: MessageService,
     private config: PrimeNGConfig,
     public dialogService: DialogService) { }
-  listUser: any[];
-  cols: any[];
-  ref: DynamicDialogRef;
+    listUser: any[];
+    cols: any[];
+    ref: DynamicDialogRef;
 
   ngOnInit(): void {
     this.config.ripple = true;
     this.dataUser.getUser().subscribe(data => {
+      console.log(data);
       const admin = {
         username: 'admin',
       };
       const i = data.indexOf(admin);
-      data.splice(i,1);
+      data.splice(i, 1);
       this.listUser = data;
     });
+
   }
-  addUser(){
+  addUser(): void {
     this.ref = this.dialogService.open(AddUserComponent, {
       data: {
         data: this.listUser
@@ -50,7 +52,8 @@ export class ListUserComponent implements OnInit {
       baseZIndex: 10000
     });
   }
-  delete(id: any, rowIndex: any){
+
+  delete(id: any, rowIndex: any): void{
     console.log('abc');
     this.confSV.confirm({
       message: 'Are you sure you want to delete the selected products?',
@@ -68,18 +71,18 @@ export class ListUserComponent implements OnInit {
       }
     });
   }
-  update(id: number){
+
+  update(id: number): void{
     console.log(id);
     this.ref = this.dialogService.open(UpdateUserComponent, {
       header: 'Update user',
-      data: {
-        id: id
-      },
+      data: { id },
       width: '50%',
       contentStyle: {'max-height': '1000px', 'min-height': '300px', overflow: 'auto', 'justify-content': 'center',    display: 'inherit'},
       baseZIndex: 10000
-  })
+  });
   }
-  
+ 
 
 }
+

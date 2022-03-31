@@ -2,6 +2,7 @@
   <ng-template pTemplate="header">
       <tr>
           <th pSortableColumn="id">STT <p-sortIcon field="vin"></p-sortIcon></th>
+          <th pSortableColumn="name">Number <p-sortIcon field="price"></p-sortIcon></th>
           <th pSortableColumn="name">Name <p-sortIcon field="price"></p-sortIcon></th>
           <th pSortableColumn="img">Image <p-sortIcon field="price"></p-sortIcon></th>
           <th pSortableColumn="price">Price <p-sortIcon field="inventoryStatus"></p-sortIcon></th>
@@ -11,6 +12,7 @@
   <ng-template pTemplate="body" let-product let-rowIndex="rowIndex" >
     <tr *ngIf="product !== null ">
       <td>{{rowIndex+1}}</td>
+      <td>{{product}}</td>
       <td>{{product.name}}</td>
       <td><img src="assets/images/{{product.img}}" alt="" style="width:100px"></td>
       <td>{{product.price}}</td>
@@ -23,8 +25,11 @@
   </tr>
   </ng-template>
 </p-table>
-<div *ngIf="lengthItem === 0">
+<div *ngIf="lengthItem === 0 && hide">
   <h3 style="text-align: center;">Cart is empty, please order product</h3>
-</div>            
+</div>
+<div *ngIf="!hide">
+  <h3 style="text-align: center;">Please <a (click)="login()" style="color: cadetblue;cursor: pointer;">login</a> Here</h3>
+</div>          
 <p-confirmDialog [style]="{'width': '50vw', 'font-size':'large'}" [baseZIndex]="10000" ></p-confirmDialog>   
 <p-toast position="top-right" key="c"  [baseZIndex]="3000"></p-toast>                

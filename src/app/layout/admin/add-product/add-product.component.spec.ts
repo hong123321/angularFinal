@@ -1,34 +1,42 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AddProductComponent } from './add-product.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { Confirmation, ConfirmationService, MessageService } from 'primeng/api';
 import { AdminService } from '../../service/admin.service';
-import { of } from 'rxjs';
+import { Observable, of, Subscriber } from 'rxjs';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
-fdescribe('AddProductComponent', () => {
+describe('AddProductComponent', () => {
   let component: AddProductComponent;
   let fixture: ComponentFixture<AddProductComponent>;
+
   const serviceAdmin = {
-    addProduct: jasmine.createSpy(),
-  };
+      addProduct: jasmine.createSpy(),
+    };
+  const messageService = jasmine.createSpyObj('messageService', ['add']);
+  const confirmationService = jasmine.createSpyObj('confirmationService', ['confirm']);
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [AddProductComponent],
       imports: [
         ReactiveFormsModule,
+        FormsModule,
         HttpClientTestingModule,
         ConfirmDialogModule
       ],
       providers: [
-        ConfirmationService,
-        MessageService,
+        { provide: MessageService, useValue: messageService
+        },
+        { provide: ConfirmationService, useValue: confirmationService
+        },
         { provide: AdminService, useValue: serviceAdmin },
+        MessageService,
+        ConfirmationService
       ],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA]
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
       .compileComponents();
   });
@@ -37,32 +45,48 @@ fdescribe('AddProductComponent', () => {
     fixture = TestBed.createComponent(AddProductComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    component.ngOnInit();
   });
+
   it('form invalid when empty', () => {
     expect(component.forms.valid).toBeFalsy();
-});
+  });
 
-  it('should display my-image.png', () => {
-    const img = fixture.debugElement.nativeElement.querySelector('img');
-    const spyError = spyOn(component, 'uploadimg' ).and.callThrough();
-    img.dispatchEvent(new Event('change'));
+  it('should call add', () => {
+    const mockTableData = {
+      target: {
+        files: [
+          { type: 'abc' }
+        ]
+      }
+    };
 
-    fixture.detectChanges();
-
-    expect(spyError).toHaveBeenCalled();
-});
+    component.uploadimg(mockTableData);
+    spyOn(messageService, 'add');
+    const val = messageService.add();
+    expect(val).toHaveBeenCalled();
+  });
 
   it('should create', () => {
-    const mockTableData = {
+    const mockTableDatas = {
       name: 'dddd',
       img: 'C:\\fakepath\\1111.jpg',
       price: 344,
       vote: 444,
       view: 444
     };
-    const confirmationService: ConfirmationService = TestBed.get(ConfirmationService);
+    // spyOn(serviceAdmin, 'addProduct').and.returnValue(of(  ));
     serviceAdmin.addProduct.and.returnValue(of({ status: 200 }));
-    component.onSubmit(mockTableData);
-    expect(confirmationService).toBeDefined();
+    component.onSubmit(mockTableDatas);
+    
+    const mockTableData2 = {
+      name: 'dddd',
+      img: '1111.jpg',
+      price: 344,
+      vote: 444,
+      view: 444
+    };
+    serviceAdmin.addProduct(mockTableData2).and.returnValue(of({ status: 200 }));
   });
+
 });

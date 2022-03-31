@@ -13,6 +13,7 @@ export class ListProductComponent implements OnInit {
     private data: AdminService) { }
 
   ngOnInit(): void {
+
     this.data.getProduct().subscribe(data => {
       this.products = data;
       data.map(element => {
@@ -23,3 +24,4 @@ export class ListProductComponent implements OnInit {
   }
 
 }
+

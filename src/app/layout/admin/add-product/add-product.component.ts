@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AdminService } from '../../service/admin.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 import { ConfirmationService, MessageService } from 'primeng/api';
+
+import { AdminService } from '../../service/admin.service';
 
 @Component({
   selector: 'app-add-product',
@@ -21,12 +23,14 @@ export class AddProductComponent implements OnInit {
       'Content-Type': 'application/JSON'
     })
   };
+
   constructor(
     private fn: FormBuilder,
     private serviceAdmin: AdminService,
     private http: HttpClient,
     private confirm: ConfirmationService,
     private mess: MessageService) { }
+
   ngOnInit(): void {
     this.forms = this.fn.group({
       name: ['', [Validators.required]],
@@ -36,17 +40,20 @@ export class AddProductComponent implements OnInit {
       view: ['', [Validators.required]]
     });
   }
-  uploadimg(e: any) {
+
+  uploadimg(e: any): void {
     console.log(e);
     this.selecttedFile = e.target.files[0];
     const type = this.selecttedFile.type;
+    console.log(type);
     if (!type.match(/image\/*/)) {
       this.mess.add({ key: 'c', severity: 'error', summary: 'Error', detail: 'AIncorrect format, please upload image file', life: 3000 });
       this.forms.controls.img.reset();
     }
   }
-  onSubmit(e: any) {
-    console.log('data', e);
+
+  onSubmit(e: any): void {
+    console.log(e);
     this.confirm.confirm({
       message: 'Are you sure you want to Add new Product?',
       header: 'Confirm',
@@ -55,6 +62,7 @@ export class AddProductComponent implements OnInit {
         e.img = this.selecttedFile.name;
         this.serviceAdmin.addProduct(e).subscribe({
           next: c => {
+            console.log(c);
           },
           error: error => {
             this.mess.add({ key: 'c', severity: 'error', summary: 'Error', detail: 'Add Product Error', life: 3000 });
@@ -64,7 +72,7 @@ export class AddProductComponent implements OnInit {
           }
         });
         const uploadData = new FormData();
-        uploadData.append('myfile', this.selecttedFile, this.selecttedFile.name)
+        uploadData.append('myfile', this.selecttedFile, this.selecttedFile.name);
         this.http.post('http://localhost:80/angular/upload.php', uploadData, {
           reportProgress: true,
           observe: 'events'

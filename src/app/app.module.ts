@@ -15,6 +15,7 @@ import { SnowModule } from 'snow';
 import { InputTextModule } from 'primeng/inputtext';
 import { AuthGuard } from './shared/guard/auth.guard';
 import { AuthbackLogGuard } from './shared/guard/authback-log.guard';
+
 const routes: Routes = [
   {
     path: '',
@@ -44,7 +45,7 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

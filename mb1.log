@@ -1,22 +1,6 @@
-{"level":"info","message":"[mb:2525] mountebank v2.5.0 now taking orders - point your browser to http://localhost:2525/ for help","timestamp":"2022-02-17T02:52:13.233Z"}
-{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2022-02-17T02:52:18.599Z"}
-{"level":"info","message":"[http:4545] Open for business...","timestamp":"2022-02-17T02:52:18.617Z"}
-{"level":"info","message":"[http:4545] ::ffff:127.0.0.1:57363 => GET /stubs","timestamp":"2022-02-17T02:52:18.756Z"}
-{"level":"info","message":"[http:4545] no predicate match, using default response","timestamp":"2022-02-17T02:52:18.781Z"}
-{"level":"info","message":"[mb:2525] POST /imposters/4545/stubs","timestamp":"2022-02-17T02:52:19.884Z"}
-{"level":"info","message":"[http:4545] ::1:57366 => GET /stubs","timestamp":"2022-02-17T02:52:21.527Z"}
-{"level":"info","message":"[http:4545] ::1:59013 => GET /stubs","timestamp":"2022-02-17T02:52:42.670Z"}
-{"level":"info","message":"[http:4545] ::1:59025 => GET /stubs","timestamp":"2022-02-17T02:52:51.945Z"}
-{"level":"info","message":"[http:4545] ::1:59026 => GET /stubs","timestamp":"2022-02-17T02:52:54.577Z"}
-{"level":"info","message":"[http:4545] ::1:61766 => GET /stubs","timestamp":"2022-02-17T02:57:59.293Z"}
-{"level":"info","message":"[http:4545] ::1:53917 => GET /stubs","timestamp":"2022-02-17T03:17:52.343Z"}
-{"level":"info","message":"[http:4545] ::1:50666 => GET /stubs","timestamp":"2022-02-17T03:49:06.597Z"}
-{"level":"info","message":"[http:4545] ::1:62506 => GET /stubs","timestamp":"2022-02-17T03:50:31.024Z"}
-{"level":"info","message":"[http:4545] ::1:49679 => GET /stubs","timestamp":"2022-02-17T03:55:41.657Z"}
-{"level":"info","message":"[http:4545] ::1:64806 => GET /stubs","timestamp":"2022-02-17T09:26:45.542Z"}
-{"level":"info","message":"[http:4545] ::1:49335 => GET /stubs","timestamp":"2022-02-17T09:40:43.420Z"}
-{"level":"info","message":"[http:4545] ::1:51349 => GET /stubs","timestamp":"2022-02-17T09:53:09.984Z"}
-{"level":"info","message":"[http:4545] ::1:49391 => GET /stubs","timestamp":"2022-02-17T11:29:57.413Z"}
-{"level":"info","message":"[http:4545] ::1:57202 => GET /stubs","timestamp":"2022-02-17T11:30:13.904Z"}
-{"level":"info","message":"[http:4545] ::1:57221 => GET /stubs","timestamp":"2022-02-17T11:30:32.999Z"}
-{"level":"info","message":"[http:4545] ::1:57255 => GET /stubs","timestamp":"2022-02-17T11:31:07.481Z"}
+{"level":"info","message":"[mb:2525] mountebank v2.5.0 now taking orders - point your browser to http://localhost:2525/ for help","timestamp":"2022-03-02T01:41:38.513Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2022-03-02T01:41:42.517Z"}
+{"level":"info","message":"[http:4545] Open for business...","timestamp":"2022-03-02T01:41:42.557Z"}
+{"level":"info","message":"[mb:2525] POST /imposters/4545/stubs","timestamp":"2022-03-02T01:41:46.963Z"}
+{"level":"info","message":"[http:4545] ::1:51108 => GET /stubs","timestamp":"2022-03-02T01:41:52.374Z"}
+{"level":"info","message":"[http:4545] ::1:53664 => GET /stubs/sdaf","timestamp":"2022-03-02T01:41:59.715Z"}
